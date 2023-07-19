@@ -55,7 +55,7 @@ export const Container = styled.nav`
     opacity: 0;
 
     z-index: 0;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
 
   @media (max-width: 796px) {
@@ -117,14 +117,14 @@ export const ButtonMenu = styled.button`
     background-color: ${({ theme }) => theme.colors.primary600};
     border-radius: 100px;
 
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
 
     &:nth-child(1) {
-      animation: barOneRevert 0.3s ease-in-out;
+      animation: barOneRevert 0.5s ease-in-out;
     }
 
     &:nth-child(3) {
-      animation: barThreeRevert 0.3s ease-in-out;
+      animation: barThreeRevert 0.5s ease-in-out;
     }
 
     @keyframes barOneRevert {
@@ -154,7 +154,7 @@ export const ButtonMenu = styled.button`
 
   .bar.barActive {
     &:nth-child(1) {
-      animation: barOne 0.3s ease-in-out forwards;
+      animation: barOne 0.5s ease-in-out forwards;
     }
 
     &:nth-child(2) {
@@ -163,7 +163,7 @@ export const ButtonMenu = styled.button`
     }
 
     &:nth-child(3) {
-      animation: barThree 0.3s ease-in-out forwards;
+      animation: barThree 0.5s ease-in-out forwards;
     }
 
     @keyframes barOne {
