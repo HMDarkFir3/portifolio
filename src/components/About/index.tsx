@@ -1,19 +1,13 @@
-import { Link as ScrollLink } from "react-scroll";
 import { useTheme } from "styled-components";
-import { Linkedin, GitHub, Instagram, ArrowDown } from "react-feather";
+import { Linkedin, GitHub, Instagram } from "react-feather";
 
-import { SocialButton } from "@/components/SocialButton";
-import { Button } from "@/components/Button";
+import { SocialButton } from "@/components/Buttons/SocialButton";
+import { Button } from "@/components/Buttons/Button";
+import { ScrollDownButton } from "@/components/Buttons/ScrollDownButton";
 
 import { robotoMono } from "@/styles/fonts";
 
-import {
-  Container,
-  IconWrapper,
-  Content,
-  Presentation,
-  ScrollDown,
-} from "./styles";
+import { Container, IconWrapper, Content, Presentation } from "./styles";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -61,20 +55,7 @@ export function About(props: Props) {
         </Content>
       </div>
 
-      <ScrollDown>
-        <ScrollLink
-          className="scrollLink"
-          to="experience"
-          spy={true}
-          smooth={true}
-          offset={-120}
-          duration={500}
-        >
-          <div className="scroll" />
-          <span>Scroll Down</span>
-          <ArrowDown size={16} color={colors.primary600} />
-        </ScrollLink>
-      </ScrollDown>
+      <ScrollDownButton to="experience" />
     </Container>
   );
 }

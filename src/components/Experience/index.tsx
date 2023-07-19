@@ -2,7 +2,7 @@ import { Link as ScrollLink } from "react-scroll";
 import { useTheme } from "styled-components";
 import { Linkedin, GitHub, Instagram, ArrowDown } from "react-feather";
 
-import { Button } from "@/components/Button";
+import { Button } from "@/components/Buttons/Button";
 
 import { robotoMono } from "@/styles/fonts";
 

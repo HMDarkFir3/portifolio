@@ -13,7 +13,6 @@ export const Container = styled.button`
   font-weight: 700;
   color: ${({ theme }) => theme.colors.primary600};
 
-  cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 
   &:hover {
