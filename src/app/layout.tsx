@@ -14,7 +14,7 @@ import { light } from "@/themes/light";
 import { nunitoSans } from "@/styles/fonts";
 import { GlobalStyle } from "@/styles/globals";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Henrique Marques - Front-End and Mobile Developer",
   description: "Personal Portfolio of Henrique Marques",
 };
