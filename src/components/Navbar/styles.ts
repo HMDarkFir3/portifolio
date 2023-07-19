@@ -5,6 +5,8 @@ export const Container = styled.nav`
   align-items: center;
   justify-content: space-between;
 
+  position: fixed;
+
   width: 100%;
 
   background-color: ${({ theme }) => theme.colors.background};
@@ -20,7 +22,7 @@ export const Container = styled.nav`
 
     background-color: ${({ theme }) => theme.colors.background};
 
-    z-index: 4;
+    z-index: 3;
   }
 
   .menu {
@@ -37,7 +39,7 @@ export const Container = styled.nav`
 
     background-color: ${({ theme }) => theme.colors.background};
 
-    z-index: 3;
+    z-index: 2;
     transition: all 0.5s ease-in-out;
   }
 
@@ -65,9 +67,11 @@ export const Container = styled.nav`
     }
 
     .overlayActive {
+      height: 100vh;
+
       opacity: 1;
 
-      z-index: 2;
+      z-index: 1;
     }
   }
 `;
@@ -86,7 +90,7 @@ export const Logo = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.primary600};
   border-radius: 50%;
 
-  z-index: 2;
+  z-index: 1;
 
   .name {
     font-size: 1rem;
@@ -101,10 +105,91 @@ export const ButtonMenu = styled.button`
   position: absolute;
   right: 20px;
 
-  z-index: 2;
+  width: 24px;
+  height: 16px;
+
+  z-index: 1;
+
+  .bar {
+    width: 100%;
+    height: 2px;
+
+    background-color: ${({ theme }) => theme.colors.primary600};
+    border-radius: 100px;
+
+    transition: all 0.3s ease-in-out;
+
+    &:nth-child(1) {
+      animation: barOneRevert 0.3s ease-in-out;
+    }
+
+    &:nth-child(3) {
+      animation: barThreeRevert 0.3s ease-in-out;
+    }
+
+    @keyframes barOneRevert {
+      0% {
+        transform: translateY(8px) rotateZ(45deg);
+      }
+      50% {
+        transform: translateY(6px) rotateZ(0deg);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    @keyframes barThreeRevert {
+      0% {
+        transform: translateY(-8px) rotateZ(135deg);
+      }
+      50% {
+        transform: translateY(-6px) rotateZ(0deg);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+  }
+
+  .bar.barActive {
+    &:nth-child(1) {
+      animation: barOne 0.3s ease-in-out forwards;
+    }
+
+    &:nth-child(2) {
+      transform: scale(0);
+      opacity: 0;
+    }
+
+    &:nth-child(3) {
+      animation: barThree 0.3s ease-in-out forwards;
+    }
+
+    @keyframes barOne {
+      50% {
+        transform: translateY(8px);
+      }
+      100% {
+        transform: translateY(6px) rotateZ(45deg);
+      }
+    }
+
+    @keyframes barThree {
+      50% {
+        transform: translateY(-6px);
+      }
+      100% {
+        transform: translateY(-8px) rotateZ(135deg);
+      }
+    }
+  }
 
   @media (max-width: 796px) {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
   }
 `;
 

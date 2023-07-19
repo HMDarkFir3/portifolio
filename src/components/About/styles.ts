@@ -1,13 +1,11 @@
 import styled from "styled-components";
 
-export const Container = styled.main`
+export const Container = styled.section`
   display: flex;
   align-items: center;
   gap: 80px;
 
   padding: 0 20px;
-
-  z-index: 1;
 
   @media (max-width: 768px) {
     gap: 20px;

@@ -7,11 +7,15 @@ import { robotoMono } from "@/styles/fonts";
 
 import { Container, IconWrapper, Content, Presentation } from "./styles";
 
-export function About() {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {}
+
+export function About(props: Props) {
+  const { ...rest } = props;
+
   const { colors } = useTheme();
 
   return (
-    <Container>
+    <Container {...rest}>
       <IconWrapper>
         <a className="iconLink" href="https://www.linkedin.com/in/hlom/">
           <Linkedin size={24} color={colors.primary600} />

@@ -13,8 +13,7 @@ export const GlobalStyle = createGlobalStyle`
 
     background-color: ${({ theme }) => theme.colors.background};
 
-    overflow-x: hidden;
-          
+    overflow-x: hidden; 
   }
 
   a {

@@ -31,9 +31,7 @@ export default function RootLayout({
           <MenuProvider>
             <ThemeProvider theme={light}>
               <GlobalStyle />
-
               <Navbar />
-
               {children}
             </ThemeProvider>
           </MenuProvider>

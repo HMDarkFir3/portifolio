@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 
 interface MenuContextData {
   isOpenMenu: boolean;
@@ -11,6 +11,14 @@ export function MenuProvider({ children }: { children: React.ReactNode }) {
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
 
   const onToggleMenu = () => setIsOpenMenu((prevState) => !prevState);
+
+  useEffect(() => {
+    if (isOpenMenu) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpenMenu]);
 
   return (
     <MenuContext.Provider value={{ isOpenMenu, onToggleMenu }}>

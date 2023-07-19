@@ -1,6 +1,7 @@
-import { useState } from "react";
+import {} from "react";
+import { Link } from "react-scroll";
 import { useTheme } from "styled-components";
-import { Menu } from "react-feather";
+import { Menu, X } from "react-feather";
 
 import { useMenu } from "@/contexts/MenuContext";
 
@@ -23,18 +24,22 @@ export function Navbar() {
     {
       id: "1",
       label: "About",
+      slug: "about",
     },
     {
       id: "2",
       label: "Experience",
+      slug: "experience",
     },
     {
       id: "3",
       label: "Projects",
+      slug: "projects",
     },
     {
       id: "4",
       label: "Contact",
+      slug: "contact",
     },
   ];
 
@@ -48,20 +53,31 @@ export function Navbar() {
         </Logo>
 
         <ButtonMenu className="menuIcon" onClick={onToggleMenu}>
-          <Menu size={24} color={colors.primary600} />
+          <div className={isOpenMenu ? "bar barActive" : "bar"} />
+          <div className={isOpenMenu ? "bar barActive" : "bar"} />
+          <div className={isOpenMenu ? "bar barActive" : "bar"} />
         </ButtonMenu>
 
         <ListWrapper>
           <List>
             {links.map((link) => (
-              <ListItem key={link.id}>
-                <span className={`${robotoMono.className} index`}>
-                  0{link.id}.
-                </span>
-                <span className={`${robotoMono.className} label`}>
-                  {link.label}
-                </span>
-              </ListItem>
+              <Link
+                key={link.id}
+                to={link.slug}
+                spy={true}
+                smooth={true}
+                offset={-120}
+                duration={500}
+              >
+                <ListItem>
+                  <span className={`${robotoMono.className} index`}>
+                    0{link.id}.
+                  </span>
+                  <span className={`${robotoMono.className} label`}>
+                    {link.label}
+                  </span>
+                </ListItem>
+              </Link>
             ))}
           </List>
         </ListWrapper>
@@ -70,14 +86,23 @@ export function Navbar() {
       <div className={isOpenMenu ? "menu menuActive" : "menu"}>
         <List>
           {links.map((link) => (
-            <ListItem key={link.id}>
-              <span className={`${robotoMono.className} index`}>
-                0{link.id}.
-              </span>
-              <span className={`${robotoMono.className} label`}>
-                {link.label}
-              </span>
-            </ListItem>
+            <Link
+              key={link.id}
+              to={link.slug}
+              spy={true}
+              smooth={true}
+              offset={-120}
+              duration={500}
+            >
+              <ListItem key={link.id} onClick={onToggleMenu}>
+                <span className={`${robotoMono.className} index`}>
+                  0{link.id}.
+                </span>
+                <span className={`${robotoMono.className} label`}>
+                  {link.label}
+                </span>
+              </ListItem>
+            </Link>
           ))}
         </List>
       </div>
