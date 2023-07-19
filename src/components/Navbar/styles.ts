@@ -16,7 +16,7 @@ export const Container = styled.nav`
     align-items: center;
 
     width: 100%;
-    height: 120px;
+    height: 88px;
 
     padding: 0 20px;
 
@@ -61,7 +61,7 @@ export const Container = styled.nav`
   @media (max-width: 796px) {
     .menuActive {
       display: flex;
-      top: 120px;
+      top: 88px;
 
       overflow: hidden;
     }
@@ -82,7 +82,6 @@ export const Logo = styled.div`
   justify-content: center;
 
   position: absolute;
-  left: 20px;
 
   width: 48px;
   height: 48px;

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.button`
+  max-width: fit-content;
+
   padding: 16px 24px;
 
   background-color: ${({ theme }) => theme.colors.background};

@@ -26,6 +26,17 @@ export const IconWrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 24px;
+
+  .iconLink {
+    border-bottom: 2px solid ${({ theme }) => theme.colors.background};
+
+    cursor: pointer;
+    transition: border-bottom 0.3s ease-in-out;
+
+    &:hover {
+      border-bottom: 2px solid ${({ theme }) => theme.colors.primary600};
+    }
+  }
 `;
 
 export const Content = styled.div`

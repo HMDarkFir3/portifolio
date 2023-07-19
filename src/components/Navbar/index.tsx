@@ -1,7 +1,6 @@
 import {} from "react";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 import { useTheme } from "styled-components";
-import { Menu, X } from "react-feather";
 
 import { useMenu } from "@/contexts/MenuContext";
 
@@ -61,10 +60,9 @@ export function Navbar() {
         <ListWrapper>
           <List>
             {links.map((link) => (
-              <Link
+              <ScrollLink
                 key={link.id}
                 to={link.slug}
-                spy={true}
                 smooth={true}
                 offset={-120}
                 duration={500}
@@ -77,7 +75,7 @@ export function Navbar() {
                     {link.label}
                   </span>
                 </ListItem>
-              </Link>
+              </ScrollLink>
             ))}
           </List>
         </ListWrapper>
@@ -86,10 +84,9 @@ export function Navbar() {
       <div className={isOpenMenu ? "menu menuActive" : "menu"}>
         <List>
           {links.map((link) => (
-            <Link
+            <ScrollLink
               key={link.id}
               to={link.slug}
-              spy={true}
               smooth={true}
               offset={-120}
               duration={500}
@@ -102,7 +99,7 @@ export function Navbar() {
                   {link.label}
                 </span>
               </ListItem>
-            </Link>
+            </ScrollLink>
           ))}
         </List>
       </div>

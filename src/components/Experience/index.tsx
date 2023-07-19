@@ -2,7 +2,6 @@ import { Link as ScrollLink } from "react-scroll";
 import { useTheme } from "styled-components";
 import { Linkedin, GitHub, Instagram, ArrowDown } from "react-feather";
 
-import { SocialButton } from "@/components/SocialButton";
 import { Button } from "@/components/Button";
 
 import { robotoMono } from "@/styles/fonts";
@@ -17,7 +16,7 @@ import {
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {}
 
-export function About(props: Props) {
+export function Experience(props: Props) {
   const { ...rest } = props;
 
   const { colors } = useTheme();
@@ -26,17 +25,17 @@ export function About(props: Props) {
     <Container {...rest}>
       <div className="wrapper">
         <IconWrapper>
-          <SocialButton
-            href="https://www.linkedin.com/in/hlom/"
-            icon={Linkedin}
-          />
+          <a className="iconLink" href="https://www.linkedin.com/in/hlom/">
+            <Linkedin size={24} color={colors.primary600} />
+          </a>
 
-          <SocialButton href="https://github.com/HMDarkFir3" icon={GitHub} />
+          <a className="iconLink" href="https://github.com/HMDarkFir3">
+            <GitHub size={24} color={colors.primary600} />
+          </a>
 
-          <SocialButton
-            href="https://www.instagram.com/hrq_marques/"
-            icon={Instagram}
-          />
+          <a className="iconLink" href="https://www.instagram.com/hrq_marques/">
+            <Instagram size={24} color={colors.primary600} />
+          </a>
         </IconWrapper>
 
         <Content>
@@ -57,7 +56,9 @@ export function About(props: Props) {
             Proficient in website development using ReactJS and NextJS.
           </p>
 
-          <Button>Get in touch</Button>
+          <div>
+            <Button>Get in touch</Button>
+          </div>
         </Content>
       </div>
 

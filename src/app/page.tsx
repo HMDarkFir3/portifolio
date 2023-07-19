@@ -1,17 +1,17 @@
 "use client";
 
 import { About } from "@/components/About";
+import { Experience } from "@/components/Experience";
 
-import { Container, Content } from "@/styles/styles";
+import { Container, Content, AboutWrapper } from "@/styles/styles";
 
 export default function Home() {
   return (
     <Container>
       <Content>
         <About id="about" />
-        <About id="experience" />
-        <About id="projects" />
-        <About id="contact" />
+
+        <Experience id="experience" />
       </Content>
     </Container>
   );

@@ -12,5 +12,10 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
 
-  margin-top: 120px;
+  margin-top: 88px;
+`;
+
+export const AboutWrapper = styled.div`
+  width: 100%;
+  height: 100vh;
 `;
