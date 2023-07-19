@@ -7,6 +7,8 @@ export const Container = styled.main`
 
   padding: 0 20px;
 
+  z-index: 1;
+
   @media (max-width: 768px) {
     gap: 20px;
   }

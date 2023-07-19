@@ -20,7 +20,7 @@ export const Container = styled.nav`
 
     background-color: ${({ theme }) => theme.colors.background};
 
-    z-index: 3;
+    z-index: 4;
   }
 
   .menu {
@@ -37,7 +37,7 @@ export const Container = styled.nav`
 
     background-color: ${({ theme }) => theme.colors.background};
 
-    z-index: 2;
+    z-index: 3;
     transition: all 0.5s ease-in-out;
   }
 
@@ -52,6 +52,7 @@ export const Container = styled.nav`
 
     opacity: 0;
 
+    z-index: 0;
     transition: all 0.3s ease-in-out;
   }
 
@@ -65,6 +66,8 @@ export const Container = styled.nav`
 
     .overlayActive {
       opacity: 1;
+
+      z-index: 2;
     }
   }
 `;

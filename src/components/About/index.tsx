@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useTheme } from "styled-components";
 import { Linkedin, GitHub, Instagram } from "react-feather";
 
@@ -13,17 +14,20 @@ export function About() {
   return (
     <Container>
       <IconWrapper>
-        <a className="iconLink" href="https://www.linkedin.com/in/hlom/">
+        <Link className="iconLink" href="https://www.linkedin.com/in/hlom/">
           <Linkedin size={24} color={colors.primary600} />
-        </a>
+        </Link>
 
-        <a className="iconLink" href="https://github.com/HMDarkFir3">
+        <Link className="iconLink" href="https://github.com/HMDarkFir3">
           <GitHub size={24} color={colors.primary600} />
-        </a>
+        </Link>
 
-        <a className="iconLink" href="https://www.instagram.com/hrq_marques/">
+        <Link
+          className="iconLink"
+          href="https://www.instagram.com/hrq_marques/"
+        >
           <Instagram size={24} color={colors.primary600} />
-        </a>
+        </Link>
       </IconWrapper>
 
       <Content>
