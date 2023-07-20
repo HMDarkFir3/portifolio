@@ -49,10 +49,7 @@ export function Navbar(props: Props) {
             offset={-88}
             duration={500}
           >
-            <li
-              className="item"
-              onClick={window.screen.width <= 796 ? onToggleMenu : () => {}}
-            >
+            <li className="item" onClick={onToggleMenu}>
               <div className="listItemWrapper">
                 <span className={`${robotoMono.className} index`}>
                   0{link.id}.
