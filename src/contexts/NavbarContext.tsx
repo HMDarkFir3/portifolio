@@ -1,13 +1,13 @@
 import { createContext, useState, useEffect, useContext } from "react";
 
-interface MenuContextData {
+interface NavbarContextData {
   isOpenMenu: boolean;
   onToggleMenu: () => void;
 }
 
-export const MenuContext = createContext({} as MenuContextData);
+export const NavbarContext = createContext({} as NavbarContextData);
 
-export function MenuProvider({ children }: { children: React.ReactNode }) {
+export function NavbarProvider({ children }: { children: React.ReactNode }) {
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
 
   const onToggleMenu = () => setIsOpenMenu((prevState) => !prevState);
@@ -21,14 +21,14 @@ export function MenuProvider({ children }: { children: React.ReactNode }) {
   }, [isOpenMenu]);
 
   return (
-    <MenuContext.Provider value={{ isOpenMenu, onToggleMenu }}>
+    <NavbarContext.Provider value={{ isOpenMenu, onToggleMenu }}>
       {children}
-    </MenuContext.Provider>
+    </NavbarContext.Provider>
   );
 }
 
-export function useMenu() {
-  const context = useContext(MenuContext);
+export function useNavbar() {
+  const context = useContext(NavbarContext);
 
   return context;
 }

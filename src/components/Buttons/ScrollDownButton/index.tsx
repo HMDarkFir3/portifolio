@@ -19,7 +19,7 @@ export function ScrollDownButton(props: Props) {
         to={to}
         spy={true}
         smooth={true}
-        offset={-120}
+        offset={-88}
         duration={500}
       >
         <div className="scroll" />

@@ -15,6 +15,7 @@ export function SocialButton(props: Props) {
   return (
     <Container href={href}>
       <Icon size={24} color={colors.primary600} />
+      <div className="bar" />
     </Container>
   );
 }

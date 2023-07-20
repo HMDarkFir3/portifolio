@@ -218,6 +218,7 @@ export const List = styled.ul`
 
 export const ListItem = styled.li`
   display: flex;
+  flex-direction: column;
   gap: 8px;
 
   padding: 8px 0;
@@ -228,21 +229,53 @@ export const ListItem = styled.li`
 
   cursor: pointer;
 
-  border-bottom: 2px solid transparent;
+  .listItemWrapper {
+    display: flex;
+    gap: 8px;
 
-  transition: border-bottom 0.3s ease-in-out;
+    .index {
+      font-size: 1rem;
+      color: ${({ theme }) => theme.colors.primary600};
+    }
+
+    .label {
+      font-size: 1rem;
+      color: ${({ theme }) => theme.colors.text600};
+    }
+  }
+
+  .bar {
+    height: 2px;
+
+    border-radius: 2px;
+
+    transition: all 0.3s ease-in-out;
+    animation: barScaleRevert 0.3s ease-in-out;
+
+    @keyframes barScaleRevert {
+      from {
+        width: 100%;
+      }
+      to {
+        width: 0;
+      }
+    }
+  }
 
   &:hover {
-    border-bottom: 2px solid ${({ theme }) => theme.colors.primary600};
-  }
+    .bar {
+      background-color: ${({ theme }) => theme.colors.primary600};
 
-  .index {
-    font-size: 1rem;
-    color: ${({ theme }) => theme.colors.primary600};
-  }
+      animation: barScale 0.3s ease-in-out;
 
-  .label {
-    font-size: 1rem;
-    color: ${({ theme }) => theme.colors.text600};
+      @keyframes barScale {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+    }
   }
 `;

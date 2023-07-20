@@ -1,4 +1,3 @@
-import { useTheme } from "styled-components";
 import { Linkedin, GitHub, Instagram } from "react-feather";
 
 import { SocialButton } from "@/components/Buttons/SocialButton";
@@ -13,8 +12,6 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function About(props: Props) {
   const { ...rest } = props;
-
-  const { colors } = useTheme();
 
   return (
     <Container {...rest}>

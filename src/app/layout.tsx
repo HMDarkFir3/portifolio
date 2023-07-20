@@ -3,7 +3,7 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "styled-components";
 
-import { MenuProvider } from "@/contexts/MenuContext";
+import { NavbarProvider } from "@/contexts/NavbarContext";
 
 import StyledComponentsRegistry from "@/lib/registry";
 
@@ -28,13 +28,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={nunitoSans.className}>
         <StyledComponentsRegistry>
-          <MenuProvider>
+          <NavbarProvider>
             <ThemeProvider theme={light}>
               <GlobalStyle />
               <Navbar />
               {children}
             </ThemeProvider>
-          </MenuProvider>
+          </NavbarProvider>
         </StyledComponentsRegistry>
       </body>
     </html>

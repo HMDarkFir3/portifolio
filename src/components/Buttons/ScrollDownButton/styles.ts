@@ -7,8 +7,6 @@ export const Container = styled.button`
 
   margin: 20px 0 0 104px;
 
-  overflow: hidden;
-
   .scrollLink {
     display: flex;
     align-items: center;
@@ -24,6 +22,8 @@ export const Container = styled.button`
     background-color: ${({ theme }) => theme.colors.background};
     border: 1px solid ${({ theme }) => theme.colors.primary600};
     border-radius: 12px;
+
+    z-index: 4;
 
     &::before {
       content: "";

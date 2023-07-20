@@ -1,8 +1,6 @@
-import {} from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { useTheme } from "styled-components";
 
-import { useMenu } from "@/contexts/MenuContext";
+import { useNavbar } from "@/contexts/NavbarContext";
 
 import { robotoMono } from "@/styles/fonts";
 
@@ -16,8 +14,7 @@ import {
 } from "./styles";
 
 export function Navbar() {
-  const { isOpenMenu, onToggleMenu } = useMenu();
-  const { colors } = useTheme();
+  const { isOpenMenu, onToggleMenu } = useNavbar();
 
   const links = [
     {
@@ -64,16 +61,20 @@ export function Navbar() {
                 key={link.id}
                 to={link.slug}
                 smooth={true}
-                offset={-120}
+                offset={-88}
                 duration={500}
               >
                 <ListItem>
-                  <span className={`${robotoMono.className} index`}>
-                    0{link.id}.
-                  </span>
-                  <span className={`${robotoMono.className} label`}>
-                    {link.label}
-                  </span>
+                  <div className="listItemWrapper">
+                    <span className={`${robotoMono.className} index`}>
+                      0{link.id}.
+                    </span>
+                    <span className={`${robotoMono.className} label`}>
+                      {link.label}
+                    </span>
+                  </div>
+
+                  <div className="bar" />
                 </ListItem>
               </ScrollLink>
             ))}
@@ -88,16 +89,20 @@ export function Navbar() {
               key={link.id}
               to={link.slug}
               smooth={true}
-              offset={-120}
+              offset={-88}
               duration={500}
             >
               <ListItem key={link.id} onClick={onToggleMenu}>
-                <span className={`${robotoMono.className} index`}>
-                  0{link.id}.
-                </span>
-                <span className={`${robotoMono.className} label`}>
-                  {link.label}
-                </span>
+                <div className="listItemWrapper">
+                  <span className={`${robotoMono.className} index`}>
+                    0{link.id}.
+                  </span>
+                  <span className={`${robotoMono.className} label`}>
+                    {link.label}
+                  </span>
+                </div>
+
+                <div className="bar" />
               </ListItem>
             </ScrollLink>
           ))}
