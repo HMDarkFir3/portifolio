@@ -1,5 +1,7 @@
 import { Link as ScrollLink } from "react-scroll";
 
+import { useNavbar } from "@/contexts/NavbarContext";
+
 import { robotoMono } from "@/styles/fonts";
 
 import { Container } from "./styles";
@@ -10,6 +12,8 @@ interface Props {
 
 export function Navbar(props: Props) {
   const { isVisible = true } = props;
+
+  const { onToggleMenu } = useNavbar();
 
   const links = [
     {
@@ -45,7 +49,10 @@ export function Navbar(props: Props) {
             offset={-88}
             duration={500}
           >
-            <li className="item">
+            <li
+              className="item"
+              onClick={window.screen.width <= 796 ? onToggleMenu : () => {}}
+            >
               <div className="listItemWrapper">
                 <span className={`${robotoMono.className} index`}>
                   0{link.id}.

@@ -7,8 +7,6 @@ import { NavbarProvider } from "@/contexts/NavbarContext";
 
 import StyledComponentsRegistry from "@/lib/registry";
 
-import { Header } from "@/components/Header";
-
 import { light } from "@/themes/light";
 
 import { nunitoSans } from "@/styles/fonts";
@@ -31,7 +29,7 @@ export default function RootLayout({
           <NavbarProvider>
             <ThemeProvider theme={light}>
               <GlobalStyle />
-              <Header />
+
               {children}
             </ThemeProvider>
           </NavbarProvider>

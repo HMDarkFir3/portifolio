@@ -1,17 +1,18 @@
 "use client";
 
+import { Header } from "@/components/Header";
 import { About } from "@/components/About";
 import { Footer } from "@/components/Footer";
 
-import { Container, Content } from "@/styles/styles";
+import { Container, Main } from "@/styles/styles";
 
 export default function Page() {
   return (
     <Container>
-      <Content>
+      <Header />
+      <Main>
         <About id="about" />
-      </Content>
-
+      </Main>
       <Footer />
     </Container>
   );
