@@ -14,9 +14,9 @@ export function NavbarProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (isOpenMenu) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflowY = "hidden";
     } else {
-      document.body.style.overflow = "unset";
+      document.body.style.overflowY = "auto";
     }
   }, [isOpenMenu]);
 

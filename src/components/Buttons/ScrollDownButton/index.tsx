@@ -12,20 +12,23 @@ export function ScrollDownButton(props: Props) {
   const { to } = props;
 
   const { colors } = useTheme();
+
   return (
-    <Container>
-      <ScrollLink
-        className="scrollLink"
-        to={to}
-        spy={true}
-        smooth={true}
-        offset={-88}
-        duration={500}
-      >
-        <div className="scroll" />
+    <ScrollLink
+      className="scrollLink"
+      to={to}
+      spy={true}
+      smooth={true}
+      offset={-88}
+      duration={500}
+    >
+      <Container>
+        <div className="scroll">
+          <div className="scrollBar" />
+        </div>
         <span>Scroll Down</span>
         <ArrowDown size={16} color={colors.primary600} />
-      </ScrollLink>
-    </Container>
+      </Container>
+    </ScrollLink>
   );
 }

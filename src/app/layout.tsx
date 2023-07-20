@@ -7,7 +7,7 @@ import { NavbarProvider } from "@/contexts/NavbarContext";
 
 import StyledComponentsRegistry from "@/lib/registry";
 
-import { Navbar } from "@/components/Navbar";
+import { Header } from "@/components/Header";
 
 import { light } from "@/themes/light";
 
@@ -31,7 +31,7 @@ export default function RootLayout({
           <NavbarProvider>
             <ThemeProvider theme={light}>
               <GlobalStyle />
-              <Navbar />
+              <Header />
               {children}
             </ThemeProvider>
           </NavbarProvider>

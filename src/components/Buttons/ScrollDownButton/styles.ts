@@ -2,10 +2,16 @@ import styled from "styled-components";
 
 export const Container = styled.button`
   display: flex;
+  align-items: center;
+  gap: 8px;
 
   max-width: fit-content;
 
   margin: 20px 0 0 104px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 
   .scrollLink {
     display: flex;
@@ -14,34 +20,26 @@ export const Container = styled.button`
   }
 
   .scroll {
-    position: relative;
-
     width: 24px;
     height: 36px;
+
+    padding: 4px;
 
     background-color: ${({ theme }) => theme.colors.background};
     border: 1px solid ${({ theme }) => theme.colors.primary600};
     border-radius: 12px;
 
-    z-index: 4;
-
-    &::before {
-      content: "";
-
-      position: absolute;
-      top: 4px;
-      left: 0;
-      right: 0;
-
+    .scrollBar {
       width: 2px;
-      height: 8px;
+      height: 6px;
 
-      margin: auto;
+      margin: 0 auto;
 
       background-color: ${({ theme }) => theme.colors.primary600};
       border-radius: 2px;
 
       animation: scrollDown 1s ease-in-out infinite alternate;
+      z-index: 2;
 
       @keyframes scrollDown {
         0% {

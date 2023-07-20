@@ -1,11 +1,5 @@
 import { Container } from "./styles";
 
-interface Props {
-  children: React.ReactNode;
-}
-
-export function Button(props: Props) {
-  const { children } = props;
-
+export function Button({ children }: { children: React.ReactNode }) {
   return <Container>{children}</Container>;
 }

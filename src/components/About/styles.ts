@@ -4,7 +4,7 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
 
-  height: calc(100vh - 88px);
+  height: calc(100vh - 176px);
 
   padding: 0 20px;
 

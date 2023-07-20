@@ -1,20 +1,15 @@
 import { Link as ScrollLink } from "react-scroll";
 
-import { useNavbar } from "@/contexts/NavbarContext";
-
 import { robotoMono } from "@/styles/fonts";
 
-import {
-  Container,
-  Logo,
-  ButtonMenu,
-  ListWrapper,
-  List,
-  ListItem,
-} from "./styles";
+import { Container } from "./styles";
 
-export function Navbar() {
-  const { isOpenMenu, onToggleMenu } = useNavbar();
+interface Props {
+  isVisible?: boolean;
+}
+
+export function Navbar(props: Props) {
+  const { isVisible = true } = props;
 
   const links = [
     {
@@ -40,79 +35,31 @@ export function Navbar() {
   ];
 
   return (
-    <Container>
-      <div className="wrapper">
-        <Logo>
-          <span className="name">
-            <a href="/">HM</a>
-          </span>
-        </Logo>
+    <Container isVisible={isVisible}>
+      <ul className="list">
+        {links.map((link) => (
+          <ScrollLink
+            key={link.id}
+            to={link.slug}
+            smooth={true}
+            offset={-88}
+            duration={500}
+          >
+            <li className="item">
+              <div className="listItemWrapper">
+                <span className={`${robotoMono.className} index`}>
+                  0{link.id}.
+                </span>
+                <span className={`${robotoMono.className} label`}>
+                  {link.label}
+                </span>
+              </div>
 
-        <ButtonMenu className="menuIcon" onClick={onToggleMenu}>
-          <div className={isOpenMenu ? "bar barActive" : "bar"} />
-          <div className={isOpenMenu ? "bar barActive" : "bar"} />
-          <div className={isOpenMenu ? "bar barActive" : "bar"} />
-        </ButtonMenu>
-
-        <ListWrapper>
-          <List>
-            {links.map((link) => (
-              <ScrollLink
-                key={link.id}
-                to={link.slug}
-                smooth={true}
-                offset={-88}
-                duration={500}
-              >
-                <ListItem>
-                  <div className="listItemWrapper">
-                    <span className={`${robotoMono.className} index`}>
-                      0{link.id}.
-                    </span>
-                    <span className={`${robotoMono.className} label`}>
-                      {link.label}
-                    </span>
-                  </div>
-
-                  <div className="bar" />
-                </ListItem>
-              </ScrollLink>
-            ))}
-          </List>
-        </ListWrapper>
-      </div>
-
-      <div className={isOpenMenu ? "menu menuActive" : "menu"}>
-        <List>
-          {links.map((link) => (
-            <ScrollLink
-              key={link.id}
-              to={link.slug}
-              smooth={true}
-              offset={-88}
-              duration={500}
-            >
-              <ListItem key={link.id} onClick={onToggleMenu}>
-                <div className="listItemWrapper">
-                  <span className={`${robotoMono.className} index`}>
-                    0{link.id}.
-                  </span>
-                  <span className={`${robotoMono.className} label`}>
-                    {link.label}
-                  </span>
-                </div>
-
-                <div className="bar" />
-              </ListItem>
-            </ScrollLink>
-          ))}
-        </List>
-      </div>
-
-      <div
-        className={isOpenMenu ? "overlay overlayActive" : "overlay"}
-        onClick={onToggleMenu}
-      />
+              <div className="bar" />
+            </li>
+          </ScrollLink>
+        ))}
+      </ul>
     </Container>
   );
 }

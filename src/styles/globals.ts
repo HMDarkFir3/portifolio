@@ -1,4 +1,4 @@
-import { createGlobalStyle, css } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -9,8 +9,6 @@ export const GlobalStyle = createGlobalStyle`
 
   html,
   body {
-    max-width: 100vw;
-
     background-color: ${({ theme }) => theme.colors.background};
 
     overflow-x: hidden; 
@@ -21,7 +19,6 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
- 
   button {
     background-color: transparent;
     border: none;
