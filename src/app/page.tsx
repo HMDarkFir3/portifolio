@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 
 import { Container, Main } from "@/styles/styles";
 
-export default function Page() {
+export default function Home() {
   return (
     <Container>
       <Header />
