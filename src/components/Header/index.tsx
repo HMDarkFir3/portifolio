@@ -1,9 +1,9 @@
-import { useNavbar } from "@/contexts/NavbarContext";
+import { useNavbar } from '@/contexts/NavbarContext';
 
-import { Navbar } from "@/components/Navbar";
-import { Overlay } from "@/components/Overlay";
+import { Navbar } from '@/components/Navbar';
+import { Overlay } from '@/components/Overlay';
 
-import { Container, Logo, ButtonMenu } from "./styles";
+import { Container, Logo, ButtonMenu } from './styles';
 
 export function Header() {
   const { isOpenMenu, onToggleMenu } = useNavbar();
@@ -18,15 +18,15 @@ export function Header() {
         </Logo>
 
         <ButtonMenu className="menuIcon" onClick={onToggleMenu}>
-          <div className={isOpenMenu ? "bar barActive" : "bar"} />
-          <div className={isOpenMenu ? "bar barActive" : "bar"} />
-          <div className={isOpenMenu ? "bar barActive" : "bar"} />
+          <div className={isOpenMenu ? 'bar barActive' : 'bar'} />
+          <div className={isOpenMenu ? 'bar barActive' : 'bar'} />
+          <div className={isOpenMenu ? 'bar barActive' : 'bar'} />
         </ButtonMenu>
 
         <Navbar isVisible={false} />
       </div>
 
-      <div className={isOpenMenu ? "menu menuActive" : "menu"}>
+      <div className={isOpenMenu ? 'menu menuActive' : 'menu'}>
         <Navbar />
       </div>
 

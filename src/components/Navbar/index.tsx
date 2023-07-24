@@ -1,12 +1,12 @@
-import { Link as ScrollLink } from "react-scroll";
+import { Link as ScrollLink } from 'react-scroll';
 
-import { useNavbar } from "@/contexts/NavbarContext";
+import { useNavbar } from '@/contexts/NavbarContext';
 
-import { links } from "@/utils/links";
+import { links } from '@/utils/links';
 
-import { robotoMono } from "@/styles/fonts";
+import { robotoMono } from '@/styles/fonts';
 
-import { Container } from "./styles";
+import { Container } from './styles';
 
 interface Props {
   isVisible?: boolean;

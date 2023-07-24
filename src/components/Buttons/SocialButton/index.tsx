@@ -1,6 +1,6 @@
-import { useTheme } from "styled-components";
+import { useTheme } from 'styled-components';
 
-import { Container } from "./styles";
+import { Container } from './styles';
 
 interface Props {
   href: string;

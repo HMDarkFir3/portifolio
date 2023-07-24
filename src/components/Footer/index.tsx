@@ -1,8 +1,8 @@
-import { Linkedin, GitHub, Instagram } from "react-feather";
+import { Linkedin, GitHub, Instagram } from 'react-feather';
 
-import { SocialButton } from "@/components/Buttons/SocialButton";
+import { SocialButton } from '@/components/Buttons/SocialButton';
 
-import { Container } from "./styles";
+import { Container } from './styles';
 
 export function Footer() {
   return (

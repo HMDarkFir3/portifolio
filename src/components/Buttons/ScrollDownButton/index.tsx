@@ -1,8 +1,8 @@
-import { Link as ScrollLink } from "react-scroll";
-import { useTheme } from "styled-components";
-import { ArrowDown } from "react-feather";
+import { Link as ScrollLink } from 'react-scroll';
+import { useTheme } from 'styled-components';
+import { ArrowDown } from 'react-feather';
 
-import { Container } from "./styles";
+import { Container } from './styles';
 
 interface Props {
   to: string;
