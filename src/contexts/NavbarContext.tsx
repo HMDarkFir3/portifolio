@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useContext } from "react";
+import { createContext, useState, useContext } from "react";
 
 interface NavbarContextData {
   isOpenMenu: boolean;
@@ -11,14 +11,6 @@ export function NavbarProvider({ children }: { children: React.ReactNode }) {
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
 
   const onToggleMenu = () => setIsOpenMenu((prevState) => !prevState);
-
-  useEffect(() => {
-    if (isOpenMenu) {
-      document.body.style.overflowY = "hidden";
-    } else {
-      document.body.style.overflowY = "auto";
-    }
-  }, [isOpenMenu]);
 
   return (
     <NavbarContext.Provider value={{ isOpenMenu, onToggleMenu }}>

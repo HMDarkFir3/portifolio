@@ -26,13 +26,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={nunitoSans.className}>
         <StyledComponentsRegistry>
-          <NavbarProvider>
-            <ThemeProvider theme={light}>
+          <ThemeProvider theme={light}>
+            <NavbarProvider>
               <GlobalStyle />
-
               {children}
-            </ThemeProvider>
-          </NavbarProvider>
+            </NavbarProvider>
+          </ThemeProvider>
         </StyledComponentsRegistry>
       </body>
     </html>

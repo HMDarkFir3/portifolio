@@ -2,6 +2,8 @@ import { Link as ScrollLink } from "react-scroll";
 
 import { useNavbar } from "@/contexts/NavbarContext";
 
+import { links } from "@/utils/links";
+
 import { robotoMono } from "@/styles/fonts";
 
 import { Container } from "./styles";
@@ -14,29 +16,6 @@ export function Navbar(props: Props) {
   const { isVisible = true } = props;
 
   const { onToggleMenu } = useNavbar();
-
-  const links = [
-    {
-      id: "1",
-      label: "About",
-      slug: "about",
-    },
-    {
-      id: "2",
-      label: "Experience",
-      slug: "experience",
-    },
-    {
-      id: "3",
-      label: "Projects",
-      slug: "projects",
-    },
-    {
-      id: "4",
-      label: "Contact",
-      slug: "contact",
-    },
-  ];
 
   return (
     <Container isVisible={isVisible}>
