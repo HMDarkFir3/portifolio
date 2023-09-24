@@ -1,5 +1,5 @@
-import { Container } from './styles';
+import styles from './styles.module.css';
 
 export function Button({ children }: { children: React.ReactNode }) {
-  return <Container>{children}</Container>;
+  return <button className={styles.container}>{children}</button>;
 }
