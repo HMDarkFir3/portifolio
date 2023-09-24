@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  position: relative;
+
+  max-width: fit-content;
+
+  margin: 20px 0 0 104px;
+
+  z-index: 2;
+}
+
+.container:hover .scroll {
+  background-color: var(--primary600);
+}
+
+.container:hover .scroll .scrollBar {
+  background-color: var(--text100);
+}
+
+.scrollLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.scroll {
+  width: 24px;
+  height: 36px;
+
+  padding: 4px;
+
+  background-color: var(--background);
+  border: 1px solid var(--primary600);
+  border-radius: 12px;
+
+  transition: background-color 0.3s ease-in-out;
+}
+
+.scroll .scrollBar {
+  width: 2px;
+  height: 6px;
+
+  margin: 0 auto;
+
+  background-color: var(--primary600);
+  border-radius: 2px;
+
+  transition: background-color 0.3s ease-in-out;
+  animation: scrollDown 1s ease-in-out infinite alternate;
+  z-index: 2;
+}
+
+.scroll + span {
+  font-size: 1rem;
+  color: var(--primary600);
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(4px);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    display: none;
+  }
+}
