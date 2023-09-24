@@ -1,5 +1,4 @@
 import { Link as ScrollLink } from 'react-scroll';
-import { StyleSheetManager } from 'styled-components';
 
 import { useNavbar } from '@/contexts/NavbarContext';
 
@@ -7,45 +6,37 @@ import { links } from '@/utils/links';
 
 import { robotoMono } from '@/styles/fonts';
 
-import { Container } from './styles';
+import styles from './styles.module.css';
 
-interface Props {
-  isVisible?: boolean;
-}
-
-export function Navbar(props: Props) {
-  const { isVisible = true } = props;
-
+export function Navbar() {
   const { onToggleMenu } = useNavbar();
 
   return (
-    <StyleSheetManager shouldForwardProp={(prop) => prop !== 'isVisible'}>
-      <Container isVisible={isVisible}>
-        <ul className="list">
-          {links.map((link) => (
-            <ScrollLink
-              key={link.id}
-              to={link.slug}
-              smooth={true}
-              offset={-88}
-              duration={500}
-            >
-              <li className="item" onClick={onToggleMenu}>
-                <div className="listItemWrapper">
-                  <span className={`${robotoMono.className} index`}>
-                    0{link.id}.
-                  </span>
-                  <span className={`${robotoMono.className} label`}>
-                    {link.label}
-                  </span>
-                </div>
+    <nav className={`${styles.container} ${styles.isMobile}`}>
+      <ul className={styles.list}>
+        {links.map((link) => (
+          <ScrollLink
+            key={link.id}
+            to={link.slug}
+            smooth={true}
+            offset={-88}
+            duration={500}
+          >
+            <li className={styles.item} onClick={onToggleMenu}>
+              <div className={styles.listItemWrapper}>
+                <span className={`${robotoMono.className} ${styles.index}`}>
+                  0{link.id}.
+                </span>
+                <span className={`${robotoMono.className} ${styles.label}`}>
+                  {link.label}
+                </span>
+              </div>
 
-                <div className="bar" />
-              </li>
-            </ScrollLink>
-          ))}
-        </ul>
-      </Container>
-    </StyleSheetManager>
+              <div className={styles.bar} />
+            </li>
+          </ScrollLink>
+        ))}
+      </ul>
+    </nav>
   );
 }

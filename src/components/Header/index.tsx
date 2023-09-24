@@ -1,5 +1,7 @@
 import { useNavbar } from '@/contexts/NavbarContext';
 
+import { useWindowDimensions } from '@/hooks/useWindowDimensions';
+
 import { Navbar } from '@/components/Navbar';
 import { Overlay } from '@/components/Overlay';
 
@@ -13,15 +15,22 @@ export function Header(props: Props) {
   const { isScrolled } = props;
 
   const { isOpenMenu, onToggleMenu } = useNavbar();
+  const { width } = useWindowDimensions();
+
+  const containerClassName = isScrolled
+    ? `${styles.container} ${styles.isScrolled}`
+    : `${styles.container} ${styles.isNotScrolled}`;
+
+  const barClassName = isOpenMenu
+    ? `${styles.bar} ${styles.barActive}`
+    : styles.bar;
+
+  const menuClassName = isOpenMenu
+    ? `${styles.menu} ${styles.menuActive}`
+    : styles.menu;
 
   return (
-    <header
-      className={
-        isScrolled
-          ? `${styles.container} ${styles.isScrolled}`
-          : `${styles.container} ${styles.isNotScrolled}`
-      }
-    >
+    <header className={containerClassName}>
       <div className={styles.wrapper}>
         <div className={styles.logo}>
           <span className={styles.name}>
@@ -30,31 +39,15 @@ export function Header(props: Props) {
         </div>
 
         <button className={styles.buttonMenu} onClick={onToggleMenu}>
-          <div
-            className={
-              isOpenMenu ? `${styles.bar} ${styles.barActive}` : styles.bar
-            }
-          />
-          <div
-            className={
-              isOpenMenu ? `${styles.bar} ${styles.barActive}` : styles.bar
-            }
-          />
-          <div
-            className={
-              isOpenMenu ? `${styles.bar} ${styles.barActive}` : styles.bar
-            }
-          />
+          <div className={barClassName} />
+          <div className={barClassName} />
+          <div className={barClassName} />
         </button>
 
-        <Navbar isVisible={false} />
+        {width > 796 && <Navbar />}
       </div>
 
-      <div
-        className={
-          isOpenMenu ? `${styles.menu} ${styles.menuActive}` : styles.menu
-        }
-      >
+      <div className={menuClassName}>
         <Navbar />
       </div>
 
