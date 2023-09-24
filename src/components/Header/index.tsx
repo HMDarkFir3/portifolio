@@ -1,3 +1,5 @@
+import { StyleSheetManager } from 'styled-components';
+
 import { useNavbar } from '@/contexts/NavbarContext';
 
 import { Navbar } from '@/components/Navbar';
@@ -15,28 +17,30 @@ export function Header(props: Props) {
   const { isOpenMenu, onToggleMenu } = useNavbar();
 
   return (
-    <Container isScrolled={isScrolled}>
-      <div className="wrapper">
-        <Logo>
-          <span className="name">
-            <a href="/">HM</a>
-          </span>
-        </Logo>
+    <StyleSheetManager shouldForwardProp={(prop) => prop !== 'isScrolled'}>
+      <Container isScrolled={isScrolled}>
+        <div className="wrapper">
+          <Logo>
+            <span className="name">
+              <a href="/">HM</a>
+            </span>
+          </Logo>
 
-        <ButtonMenu className="menuIcon" onClick={onToggleMenu}>
-          <div className={isOpenMenu ? 'bar barActive' : 'bar'} />
-          <div className={isOpenMenu ? 'bar barActive' : 'bar'} />
-          <div className={isOpenMenu ? 'bar barActive' : 'bar'} />
-        </ButtonMenu>
+          <ButtonMenu className="menuIcon" onClick={onToggleMenu}>
+            <div className={isOpenMenu ? 'bar barActive' : 'bar'} />
+            <div className={isOpenMenu ? 'bar barActive' : 'bar'} />
+            <div className={isOpenMenu ? 'bar barActive' : 'bar'} />
+          </ButtonMenu>
 
-        <Navbar isVisible={false} />
-      </div>
+          <Navbar isVisible={false} />
+        </div>
 
-      <div className={isOpenMenu ? 'menu menuActive' : 'menu'}>
-        <Navbar />
-      </div>
+        <div className={isOpenMenu ? 'menu menuActive' : 'menu'}>
+          <Navbar />
+        </div>
 
-      <Overlay />
-    </Container>
+        <Overlay />
+      </Container>
+    </StyleSheetManager>
   );
 }
