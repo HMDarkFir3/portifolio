@@ -9,6 +9,16 @@ export const Container = styled.button`
 
   margin: 20px 0 0 104px;
 
+  &:hover {
+    .scroll {
+      background-color: ${({ theme }) => theme.colors.primary600};
+
+      .scrollBar {
+        background-color: ${({ theme }) => theme.colors.text100};
+      }
+    }
+  }
+
   @media (max-width: 768px) {
     display: none;
   }
@@ -29,6 +39,8 @@ export const Container = styled.button`
     border: 1px solid ${({ theme }) => theme.colors.primary600};
     border-radius: 12px;
 
+    transition: background-color 0.3s ease-in-out;
+
     .scrollBar {
       width: 2px;
       height: 6px;
@@ -38,6 +50,7 @@ export const Container = styled.button`
       background-color: ${({ theme }) => theme.colors.primary600};
       border-radius: 2px;
 
+      transition: background-color 0.3s ease-in-out;
       animation: scrollDown 1s ease-in-out infinite alternate;
       z-index: 2;
 

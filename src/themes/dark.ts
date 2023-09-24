@@ -1,5 +1,5 @@
-export const light = {
-  title: 'light',
+export const dark = {
+  title: 'dark',
 
   colors: {
     background: '#0f172a',

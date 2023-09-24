@@ -5,11 +5,17 @@ import { Overlay } from '@/components/Overlay';
 
 import { Container, Logo, ButtonMenu } from './styles';
 
-export function Header() {
+interface Props {
+  isScrolled: boolean;
+}
+
+export function Header(props: Props) {
+  const { isScrolled } = props;
+
   const { isOpenMenu, onToggleMenu } = useNavbar();
 
   return (
-    <Container>
+    <Container isScrolled={isScrolled}>
       <div className="wrapper">
         <Logo>
           <span className="name">

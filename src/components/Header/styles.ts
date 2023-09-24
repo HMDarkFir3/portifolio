@@ -1,16 +1,36 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.header`
+interface ContainerProps {
+  isScrolled: boolean;
+}
+
+export const Container = styled.header<ContainerProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   position: fixed;
+  top: 0;
+  left: 0;
 
   width: 100%;
 
   background-color: ${({ theme }) => theme.colors.background};
-  box-shadow: 0px 1px 1px 0px ${({ theme }) => theme.colors.boxShadow};
+
+  transition: box-shadow 0.25s ease-in-out;
+
+  ${({ theme, isScrolled }) =>
+    isScrolled
+      ? css`
+          box-shadow: 0px 1px 1px 0px ${theme.colors.primary600};
+        `
+      : css`
+          box-shadow: 0px 1px 1px 0px ${theme.colors.boxShadow};
+        `}
+
+  .isScrolled {
+    box-shadow: 0px 1px 1px 0px ${({ theme }) => theme.colors.primary600};
+  }
 
   .wrapper {
     display: flex;

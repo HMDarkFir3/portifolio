@@ -7,7 +7,7 @@ import { NavbarProvider } from '@/contexts/NavbarContext';
 
 import StyledComponentsRegistry from '@/lib/registry';
 
-import { light } from '@/themes/light';
+import { dark } from '@/themes/dark';
 
 import { nunitoSans } from '@/styles/fonts';
 import { GlobalStyle } from '@/styles/globals';
@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={nunitoSans.className}>
         <StyledComponentsRegistry>
-          <ThemeProvider theme={light}>
+          <ThemeProvider theme={dark}>
             <NavbarProvider>
               <GlobalStyle />
               {children}

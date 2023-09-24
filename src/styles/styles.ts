@@ -12,7 +12,4 @@ export const Main = styled.main`
   max-width: 1024px;
 
   margin: 0 auto;
-  margin-top: 88px;
-
-  padding-bottom: 88px;
 `;
