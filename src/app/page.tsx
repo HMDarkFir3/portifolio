@@ -32,6 +32,9 @@ export default function Page() {
       <Header isScrolled={isScrolled} />
       <Main>
         <About id="about" />
+        <About id="experience" />
+        <About id="projects" />
+        <About id="contact" />
       </Main>
       <Footer />
     </Container>

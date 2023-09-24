@@ -21,6 +21,8 @@ export const Container = styled.header<ContainerProps>`
 
   transition: box-shadow 0.25s ease-in-out;
 
+  z-index: 3;
+
   ${({ theme, isScrolled }) =>
     isScrolled
       ? css`

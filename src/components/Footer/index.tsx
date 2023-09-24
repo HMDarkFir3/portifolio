@@ -1,6 +1,6 @@
 import { Linkedin, GitHub, Instagram } from 'react-feather';
 
-import { SocialButton } from '@/components/Buttons/SocialButton';
+import { SocialButton } from '@/components/Buttons/ScrollDownButton/SocialButton';
 
 import { Container } from './styles';
 

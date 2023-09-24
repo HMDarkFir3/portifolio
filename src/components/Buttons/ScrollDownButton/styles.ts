@@ -5,9 +5,13 @@ export const Container = styled.button`
   align-items: center;
   gap: 8px;
 
+  position: relative;
+
   max-width: fit-content;
 
   margin: 20px 0 0 104px;
+
+  z-index: 2;
 
   &:hover {
     .scroll {
