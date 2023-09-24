@@ -1,0 +1,77 @@
+.container {
+
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 88px;
+  padding: 0 20px;
+
+  
+}
+
+.wrapper {
+  display: flex;
+  gap: 80px;
+}
+
+.iconWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  margin: 40px 0;
+}
+
+.grettings {
+  font-size: 1rem;
+  color: var(--primary600);
+}
+
+.resume {
+  width: 70%;
+
+  font-size: 1rem;
+  color: var(--text600);
+}
+
+
+
+.presentation {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text100);
+}
+
+.role {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text600);
+}
+
+@media (max-width: 768px) {
+  .resume {
+    width: 100%;
+  }
+
+  .wrapper {
+    gap: 20px;
+  }
+
+  .name,
+  .role {
+    font-size: 2rem;
+  }
+}

@@ -10,7 +10,8 @@ import StyledComponentsRegistry from '@/lib/registry';
 import { dark } from '@/themes/dark';
 
 import { nunitoSans } from '@/styles/fonts';
-import { GlobalStyle } from '@/styles/globals';
+
+import '@/styles/global.css';
 
 const metadata: Metadata = {
   title: 'Henrique Marques - Front-End and Mobile Developer',
@@ -27,10 +28,7 @@ export default function RootLayout({
       <body className={nunitoSans.className}>
         <StyledComponentsRegistry>
           <ThemeProvider theme={dark}>
-            <NavbarProvider>
-              <GlobalStyle />
-              {children}
-            </NavbarProvider>
+            <NavbarProvider>{children}</NavbarProvider>
           </ThemeProvider>
         </StyledComponentsRegistry>
       </body>

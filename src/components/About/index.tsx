@@ -6,7 +6,7 @@ import { ScrollDownButton } from '@/components/Buttons/ScrollDownButton';
 
 import { robotoMono } from '@/styles/fonts';
 
-import { Container, IconWrapper, Content, Presentation } from './styles';
+import styles from './styles.module.css';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -14,9 +14,9 @@ export function About(props: Props) {
   const { ...rest } = props;
 
   return (
-    <Container {...rest}>
-      <div className="wrapper">
-        <IconWrapper>
+    <section className={styles.container} {...rest}>
+      <div className={styles.wrapper}>
+        <div className={styles.iconWrapper}>
           <SocialButton
             href="https://www.linkedin.com/in/hlom/"
             icon={Linkedin}
@@ -28,19 +28,19 @@ export function About(props: Props) {
             href="https://www.instagram.com/hrq_marques/"
             icon={Instagram}
           />
-        </IconWrapper>
+        </div>
 
-        <Content>
-          <span className={`${robotoMono.className} grettings`}>
+        <div className={styles.content}>
+          <span className={`${robotoMono.className} ${styles.grettings}`}>
             Hi, my name is
           </span>
 
-          <Presentation>
-            <span className="name">Henrique Marques.</span>
-            <span className="role">Front-End and Mobile Developer.</span>
-          </Presentation>
+          <div className={styles.presentation}>
+            <span className={styles.name}>Henrique Marques.</span>
+            <span className={styles.role}>Front-End and Mobile Developer.</span>
+          </div>
 
-          <p className="resume">
+          <p className={styles.resume}>
             I{`'`}m Henrique, a Systems Development technician from ETEC Doutora
             Ruth Cardoso, currently studying Analysis and Systems Development at
             Fatec Rubens Lara. Experienced in logistics and e-commerce projects,
@@ -49,10 +49,10 @@ export function About(props: Props) {
           </p>
 
           <Button>Get in touch</Button>
-        </Content>
+        </div>
       </div>
 
       <ScrollDownButton to="experience" />
-    </Container>
+    </section>
   );
 }
