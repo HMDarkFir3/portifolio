@@ -1,6 +1,6 @@
 import { useTheme } from 'styled-components';
 
-import { Container } from './styles';
+import styles from './styles.module.css';
 
 interface Props {
   href: string;
@@ -13,9 +13,9 @@ export function SocialButton(props: Props) {
   const { colors } = useTheme();
 
   return (
-    <Container href={href}>
+    <a className={styles.container} href={href}>
       <Icon size={24} color={colors.primary600} />
-      <div className="bar" />
-    </Container>
+      <div className={styles.bar} />
+    </a>
   );
 }
