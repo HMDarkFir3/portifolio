@@ -1,4 +1,4 @@
-import { useNavbar } from '@/contexts/NavbarContext';
+import { useNavbar } from '@/hooks/useNavbar';
 
 import { useWindowDimensions } from '@/hooks/useWindowDimensions';
 

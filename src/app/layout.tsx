@@ -1,19 +1,14 @@
 'use client';
 
 import type { Metadata } from 'next';
-import { ThemeProvider } from 'styled-components';
 
 import { NavbarProvider } from '@/contexts/NavbarContext';
-
-import StyledComponentsRegistry from '@/lib/registry';
-
-import { dark } from '@/themes/dark';
 
 import { nunitoSans } from '@/styles/fonts';
 
 import '@/styles/global.css';
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
   title: 'Henrique Marques - Front-End and Mobile Developer',
   description: 'Personal Portfolio of Henrique Marques',
 };
@@ -26,11 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={nunitoSans.className}>
-        <StyledComponentsRegistry>
-          <ThemeProvider theme={dark}>
-            <NavbarProvider>{children}</NavbarProvider>
-          </ThemeProvider>
-        </StyledComponentsRegistry>
+        <NavbarProvider>{children}</NavbarProvider>
       </body>
     </html>
   );

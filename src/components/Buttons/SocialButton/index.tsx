@@ -1,20 +1,18 @@
-import { useTheme } from 'styled-components';
+import { IconProps } from 'react-feather';
 
 import styles from './styles.module.css';
 
 interface Props {
   href: string;
-  icon: React.ElementType;
+  icon: React.ElementType<IconProps>;
 }
 
 export function SocialButton(props: Props) {
   const { href, icon: Icon } = props;
 
-  const { colors } = useTheme();
-
   return (
     <a className={styles.container} href={href}>
-      <Icon size={24} color={colors.primary600} />
+      <Icon className={styles.icon} size={24} />
       <div className={styles.bar} />
     </a>
   );

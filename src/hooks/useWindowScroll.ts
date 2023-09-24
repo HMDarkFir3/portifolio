@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 
 export function useWindowScroll(scrollAt: number): { isScrolled: boolean } {

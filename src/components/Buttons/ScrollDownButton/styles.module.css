@@ -58,6 +58,10 @@
   color: var(--primary600);
 }
 
+.scrollIcon {
+  color: var(--primary600);
+}
+
 @keyframes scrollDown {
   0% {
     transform: translateY(0px);

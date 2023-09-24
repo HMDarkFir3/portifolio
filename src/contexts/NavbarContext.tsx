@@ -20,9 +20,3 @@ export function NavbarProvider({ children }: { children: React.ReactNode }) {
     </NavbarContext.Provider>
   );
 }
-
-export function useNavbar() {
-  const context = useContext(NavbarContext);
-
-  return context;
-}

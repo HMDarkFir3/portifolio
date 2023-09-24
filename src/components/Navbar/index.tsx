@@ -1,6 +1,6 @@
 import { Link as ScrollLink } from 'react-scroll';
 
-import { useNavbar } from '@/contexts/NavbarContext';
+import { useNavbar } from '@/hooks/useNavbar';
 
 import { links } from '@/utils/links';
 

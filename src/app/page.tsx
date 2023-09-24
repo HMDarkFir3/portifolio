@@ -9,20 +9,20 @@ import { Footer } from '@/components/Footer';
 
 import { HEADER_HEIGHT } from '@/utils/constants';
 
-import { Container, Main } from '@/styles/styles';
+import styles from '@/styles/styles.module.css';
 
 export default function Page() {
   const { isScrolled } = useWindowScroll(HEADER_HEIGHT);
 
   return (
-    <Container>
+    <div className={styles.container}>
       <Header isScrolled={isScrolled} />
-      <Main>
+      <main className={styles.main}>
         <About id="about" />
         <About id="experience" />
         {/* <Experience id="experience" /> */}
-      </Main>
+      </main>
       <Footer />
-    </Container>
+    </div>
   );
 }

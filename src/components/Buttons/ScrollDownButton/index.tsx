@@ -1,5 +1,4 @@
 import { Link as ScrollLink } from 'react-scroll';
-import { useTheme } from 'styled-components';
 import { ArrowDown } from 'react-feather';
 
 import { HEADER_HEIGHT } from '@/utils/constants';
@@ -12,8 +11,6 @@ interface Props {
 
 export function ScrollDownButton(props: Props) {
   const { to } = props;
-
-  const { colors } = useTheme();
 
   return (
     <button className={styles.container}>
@@ -29,7 +26,7 @@ export function ScrollDownButton(props: Props) {
           <div className={styles.scrollBar} />
         </div>
         <span>Scroll Down</span>
-        <ArrowDown size={16} color={colors.primary600} />
+        <ArrowDown className={styles.scrollIcon} size={16} />
       </ScrollLink>
     </button>
   );
