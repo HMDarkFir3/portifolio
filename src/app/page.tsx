@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 
 import { Header } from '@/components/Header';
 import { About } from '@/components/About';
+import { Experience } from '@/components/Experience';
 import { Footer } from '@/components/Footer';
 
 import { HEADER_HEIGHT } from '@/utils/constants';
@@ -32,9 +33,7 @@ export default function Page() {
       <Header isScrolled={isScrolled} />
       <Main>
         <About id="about" />
-        <About id="experience" />
-        <About id="projects" />
-        <About id="contact" />
+        <Experience id="experience" />
       </Main>
       <Footer />
     </Container>
