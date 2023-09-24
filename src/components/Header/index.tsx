@@ -1,11 +1,9 @@
-import { StyleSheetManager } from 'styled-components';
-
 import { useNavbar } from '@/contexts/NavbarContext';
 
 import { Navbar } from '@/components/Navbar';
 import { Overlay } from '@/components/Overlay';
 
-import { Container, Logo, ButtonMenu } from './styles';
+import styles from './styles.module.css';
 
 interface Props {
   isScrolled: boolean;
@@ -17,30 +15,50 @@ export function Header(props: Props) {
   const { isOpenMenu, onToggleMenu } = useNavbar();
 
   return (
-    <StyleSheetManager shouldForwardProp={(prop) => prop !== 'isScrolled'}>
-      <Container isScrolled={isScrolled}>
-        <div className="wrapper">
-          <Logo>
-            <span className="name">
-              <a href="/">HM</a>
-            </span>
-          </Logo>
-
-          <ButtonMenu className="menuIcon" onClick={onToggleMenu}>
-            <div className={isOpenMenu ? 'bar barActive' : 'bar'} />
-            <div className={isOpenMenu ? 'bar barActive' : 'bar'} />
-            <div className={isOpenMenu ? 'bar barActive' : 'bar'} />
-          </ButtonMenu>
-
-          <Navbar isVisible={false} />
+    <header
+      className={
+        isScrolled
+          ? `${styles.container} ${styles.isScrolled}`
+          : `${styles.container} ${styles.isNotScrolled}`
+      }
+    >
+      <div className={styles.wrapper}>
+        <div className={styles.logo}>
+          <span className={styles.name}>
+            <a href="/">HM</a>
+          </span>
         </div>
 
-        <div className={isOpenMenu ? 'menu menuActive' : 'menu'}>
-          <Navbar />
-        </div>
+        <button className={styles.buttonMenu} onClick={onToggleMenu}>
+          <div
+            className={
+              isOpenMenu ? `${styles.bar} ${styles.barActive}` : styles.bar
+            }
+          />
+          <div
+            className={
+              isOpenMenu ? `${styles.bar} ${styles.barActive}` : styles.bar
+            }
+          />
+          <div
+            className={
+              isOpenMenu ? `${styles.bar} ${styles.barActive}` : styles.bar
+            }
+          />
+        </button>
 
-        <Overlay />
-      </Container>
-    </StyleSheetManager>
+        <Navbar isVisible={false} />
+      </div>
+
+      <div
+        className={
+          isOpenMenu ? `${styles.menu} ${styles.menuActive}` : styles.menu
+        }
+      >
+        <Navbar />
+      </div>
+
+      <Overlay />
+    </header>
   );
 }
