@@ -1,3 +1,5 @@
+'use client';
+
 import type { Metadata } from 'next';
 import { ThemeProvider } from 'styled-components';
 
@@ -10,7 +12,7 @@ import { dark } from '@/themes/dark';
 import { nunitoSans } from '@/styles/fonts';
 import { GlobalStyle } from '@/styles/globals';
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: 'Henrique Marques - Front-End and Mobile Developer',
   description: 'Personal Portfolio of Henrique Marques',
 };
