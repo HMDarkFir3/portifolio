@@ -2,14 +2,14 @@ import { Linkedin, GitHub, Instagram } from 'react-feather';
 
 import { SocialButton } from '@/components/Buttons/SocialButton';
 
-import { Container } from './styles';
+import styles from './styles.module.css';
 
 export function Footer() {
   return (
-    <Container>
-      <span className="name">Henrique Marques</span>
+    <footer className={styles.container}>
+      <span className={styles.name}>Henrique Marques</span>
 
-      <div className="social">
+      <div className={styles.social}>
         <SocialButton
           href="https://www.linkedin.com/in/hlom/"
           icon={Linkedin}
@@ -23,7 +23,7 @@ export function Footer() {
         />
       </div>
 
-      <span className="copyright">&copy; 2023 all rights reserved</span>
-    </Container>
+      <span className={styles.copyright}>&copy; 2023 all rights reserved</span>
+    </footer>
   );
 }
