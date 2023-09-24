@@ -1,27 +1,38 @@
-'use client';
+import { useState, useEffect, useCallback } from 'react';
 
-import { useState, useEffect } from 'react';
-
-function getWindowDimensions(): { width: number; height: number } {
-  const { innerWidth: width, innerHeight: height } = window;
-
-  return { width, height };
+interface WindowDimensions {
+  width: number;
+  height: number;
 }
 
-export function useWindowDimensions(): { width: number; height: number } {
-  const [windowDimesions, setWindowDimensions] = useState(
-    getWindowDimensions()
+function getWindowDimensions(): WindowDimensions {
+  if (typeof window !== 'undefined') {
+    const { innerHeight, innerWidth } = window;
+    return { width: innerWidth, height: innerHeight };
+  }
+
+  return { width: 0, height: 0 };
+}
+
+export function useWindowDimensions(): WindowDimensions {
+  const [windowDimesions, setWindowDimensions] = useState<{
+    width: number;
+    height: number;
+  }>({
+    width: 0,
+    height: 0,
+  });
+
+  const updateScreen = useCallback(
+    () => setWindowDimensions(getWindowDimensions()),
+    [setWindowDimensions]
   );
 
   useEffect(() => {
-    const onSize = () => {
-      setWindowDimensions(getWindowDimensions);
-    };
+    window.addEventListener('resize', updateScreen);
 
-    window.addEventListener('resize', onSize);
-
-    return () => window.removeEventListener('resize', onSize);
-  }, []);
+    return () => window.removeEventListener('resize', updateScreen);
+  }, [updateScreen]);
 
   return windowDimesions;
 }
