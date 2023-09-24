@@ -1,11 +1,13 @@
 import { useNavbar } from '@/contexts/NavbarContext';
 
-import { Container } from './styles';
+import styles from './styles.module.css';
 
 export function Overlay() {
   const { isOpenMenu, onToggleMenu } = useNavbar();
 
-  return (
-    <Container className={isOpenMenu ? 'active' : ''} onClick={onToggleMenu} />
-  );
+  const containerClassName = isOpenMenu
+    ? `${styles.container} ${styles.active}`
+    : styles.container;
+
+  return <div className={containerClassName} onClick={onToggleMenu} />;
 }
