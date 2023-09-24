@@ -33,6 +33,7 @@ export default function Page() {
       <Header isScrolled={isScrolled} />
       <Main>
         <About id="about" />
+        <About id="experience" />
         {/* <Experience id="experience" /> */}
       </Main>
       <Footer />
