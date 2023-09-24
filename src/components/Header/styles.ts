@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import { HEADER_HEIGHT } from '@/utils/constants';
+
 interface ContainerProps {
   isScrolled: boolean;
 }
@@ -37,7 +39,7 @@ export const Container = styled.header<ContainerProps>`
     align-items: center;
 
     width: 100%;
-    height: 88px;
+    height: ${HEADER_HEIGHT}px;
 
     padding: 0 20px;
 

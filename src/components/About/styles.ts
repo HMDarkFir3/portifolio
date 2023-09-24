@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
+import { HEADER_HEIGHT } from '@/utils/constants';
+
 export const Container = styled.section`
   display: flex;
   flex-direction: column;
 
   height: calc(100vh - 88px);
 
-  margin-top: 88px;
+  margin-top: ${HEADER_HEIGHT}px;
   padding: 0 20px;
 
   .wrapper {

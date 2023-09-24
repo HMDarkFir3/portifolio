@@ -6,22 +6,24 @@ import { Header } from '@/components/Header';
 import { About } from '@/components/About';
 import { Footer } from '@/components/Footer';
 
+import { HEADER_HEIGHT } from '@/utils/constants';
+
 import { Container, Main } from '@/styles/styles';
 
 export default function Page() {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
   useEffect(() => {
-    const windowScroll = () => {
-      const isScrollAtTop = window.scrollY < 88;
+    const onWindowScroll = () => {
+      const isScrollAtTop = window.scrollY < HEADER_HEIGHT;
 
       setIsScrolled(!isScrollAtTop);
     };
 
-    window.addEventListener('scroll', windowScroll);
+    window.addEventListener('scroll', onWindowScroll);
 
     return () => {
-      window.removeEventListener('scroll', windowScroll);
+      window.removeEventListener('scroll', onWindowScroll);
     };
   }, []);
 

@@ -2,6 +2,8 @@ import { Link as ScrollLink } from 'react-scroll';
 import { useTheme } from 'styled-components';
 import { ArrowDown } from 'react-feather';
 
+import { HEADER_HEIGHT } from '@/utils/constants';
+
 import { Container } from './styles';
 
 interface Props {
@@ -19,7 +21,7 @@ export function ScrollDownButton(props: Props) {
       to={to}
       spy={true}
       smooth={true}
-      offset={-88}
+      offset={-HEADER_HEIGHT}
       duration={500}
     >
       <Container>
