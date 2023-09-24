@@ -1,7 +1,5 @@
 import { useNavbar } from '@/hooks/useNavbar';
 
-import { useWindowDimensions } from '@/hooks/useWindowDimensions';
-
 import { Navbar } from '@/components/Navbar';
 import { Overlay } from '@/components/Overlay';
 
@@ -15,18 +13,17 @@ export function Header(props: Props) {
   const { isScrolled } = props;
 
   const { isOpenMenu, onToggleMenu } = useNavbar();
-  const { width } = useWindowDimensions();
 
   const containerClassName = isScrolled
     ? `${styles.container} ${styles.isScrolled}`
     : `${styles.container} ${styles.isNotScrolled}`;
 
   const barClassName = isOpenMenu
-    ? `${styles.bar} ${styles.barActive}`
+    ? `${styles.bar} ${styles.barIsActive}`
     : styles.bar;
 
   const menuClassName = isOpenMenu
-    ? `${styles.menu} ${styles.menuActive}`
+    ? `${styles.menu} ${styles.menuIsActive}`
     : styles.menu;
 
   return (
@@ -44,7 +41,9 @@ export function Header(props: Props) {
           <div className={barClassName} />
         </button>
 
-        {width > 796 && <Navbar />}
+        <div className={styles.menuIsNotActive}>
+          <Navbar />
+        </div>
       </div>
 
       <div className={menuClassName}>

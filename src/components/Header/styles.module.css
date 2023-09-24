@@ -108,25 +108,35 @@
   animation: barThreeRevert 0.5s ease-in-out;
 }
 
-.buttonMenu .bar.barActive:nth-child(1) {
+.buttonMenu .bar.barIsActive:nth-child(1) {
   animation: barOne 0.5s ease-in-out forwards;
 }
 
-.buttonMenu .bar.barActive:nth-child(2) {
+.buttonMenu .bar.barIsActive:nth-child(2) {
   transform: scale(0);
   opacity: 0;
 }
 
-.buttonMenu .bar.barActive:nth-child(3) {
+.buttonMenu .bar.barIsActive:nth-child(3) {
   animation: barThree 0.5s ease-in-out forwards;
 }
 
+.menuIsNotActive {
+  display: flex;
+
+  width: 100%;
+}
+
 @media (max-width: 796px) {
-  .menuActive {
+  .menuIsActive {
     display: flex;
     top: 88px;
 
     overflow: hidden;
+  }
+
+  .menuIsNotActive {
+    display: none;
   }
 
   .buttonMenu {
