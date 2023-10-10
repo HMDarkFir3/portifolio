@@ -9,7 +9,7 @@ import { Footer } from '@/components/Footer';
 
 import { HEADER_HEIGHT } from '@/utils/constants';
 
-import styles from '@/styles/styles.module.css';
+import styles from '@/styles/styles.module.scss';
 
 export default function Page() {
   const { isScrolled } = useWindowScroll(HEADER_HEIGHT);

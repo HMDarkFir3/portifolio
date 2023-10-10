@@ -1,6 +1,6 @@
 import { useNavbar } from '@/hooks/useNavbar';
 
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 export function Overlay() {
   const { isOpenMenu, onToggleMenu } = useNavbar();

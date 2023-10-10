@@ -3,7 +3,7 @@ import { ArrowDown } from 'react-feather';
 
 import { HEADER_HEIGHT } from '@/utils/constants';
 
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 interface Props {
   to: string;
@@ -26,6 +26,7 @@ export function ScrollDownButton(props: Props) {
           <div className={styles.scrollBar} />
         </div>
         <span>Scroll Down</span>
+
         <ArrowDown className={styles.scrollIcon} size={16} />
       </ScrollLink>
     </button>

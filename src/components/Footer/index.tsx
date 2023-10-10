@@ -2,7 +2,7 @@ import { Linkedin, GitHub, Instagram } from 'react-feather';
 
 import { SocialButton } from '@/components/Buttons/SocialButton';
 
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 export function Footer() {
   return (

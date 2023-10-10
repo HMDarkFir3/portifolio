@@ -1,0 +1,22 @@
+@import '../../../styles/variables.module.scss';
+
+.container {
+  max-width: fit-content;
+
+  padding: 16px 24px;
+
+  background-color: $background;
+  border: 1px solid $primary600;
+  border-radius: 4px;
+
+  font-size: 1rem;
+  font-weight: 700;
+  color: $primary600;
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $primary600;
+    color: $text100;
+  }
+}
