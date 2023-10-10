@@ -6,7 +6,7 @@ import { ScrollDownButton } from '@/components/Buttons/ScrollDownButton';
 
 import { robotoMono } from '@/styles/fonts';
 
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {}
 

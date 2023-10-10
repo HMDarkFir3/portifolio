@@ -6,7 +6,7 @@ import { links } from '@/utils/links';
 
 import { robotoMono } from '@/styles/fonts';
 
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 export function Navbar() {
   const { onToggleMenu } = useNavbar();
@@ -23,7 +23,7 @@ export function Navbar() {
             duration={500}
           >
             <li className={styles.item} onClick={onToggleMenu}>
-              <div className={styles.listItemWrapper}>
+              <div className={styles.itemWrapper}>
                 <span className={`${robotoMono.className} ${styles.index}`}>
                   0{link.id}.
                 </span>

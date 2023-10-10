@@ -4,7 +4,7 @@ import { NavbarProvider } from '@/contexts/NavbarContext';
 
 import { nunitoSans } from '@/styles/fonts';
 
-import '@/styles/global.css';
+import '@/styles/global.scss';
 
 export const metadata: Metadata = {
   title: 'Henrique Marques - Front-End and Mobile Developer',

@@ -3,7 +3,7 @@ import { useNavbar } from '@/hooks/useNavbar';
 import { Navbar } from '@/components/Navbar';
 import { Overlay } from '@/components/Overlay';
 
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 interface Props {
   isScrolled: boolean;
