@@ -13,6 +13,7 @@
     justify-content: center;
 
     margin-bottom: 40px;
+    padding-right: 20px;
 
     .bar {
       width: 1px;
@@ -26,5 +27,10 @@
 @media (max-width: 768px) {
   .container {
     padding: 40px 20px 88px 20px;
+
+    .typeWrapper {
+      margin-bottom: 20px;
+      padding-right: 0;
+    }
   }
 }

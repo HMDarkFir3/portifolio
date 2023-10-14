@@ -4,4 +4,5 @@ export interface ExperienceDTO {
   company: string;
   description?: string;
   period: string;
+  tags?: string[];
 }
