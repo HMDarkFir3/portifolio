@@ -1,19 +1,27 @@
-$background: #0f172a;
-$primary600: #48b8a8;
-$secondary: #131d35;
+$background: #0f182c;
 
-$text600: #8088a8;
-$text100: #ccd6f6;
+$primary900: #131d35;
+$primary800: #122b39;
+$primary600: #55d4c5;
+
+$text600: #768499;
+$text400: #505e75;
+$text100: #e2e8f0;
 
 $overlay: rgba(0, 0, 0, 0.5);
 $boxShadow: rgba(12, 18, 34, 0.5);
 
 :export {
   background: $background;
+
+  primary900: $primary900;
+  primary800: $primary800;
   primary600: $primary600;
-  secondary: $secondary;
+
   text600: $text600;
+  text400: $text400;
   text100: $text100;
+
   overlay: $overlay;
   boxShadow: $boxShadow;
 }

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { InlineButton } from '@/components/Buttons/InlineButton';
-import { ExperienceCard } from '@/components/ExperienceCard';
+import { ExperienceCard } from '@/components/Cards/ExperienceCard';
 
 import { experiences } from '@/utils/experiences';
 import { educations } from '@/utils/educations';

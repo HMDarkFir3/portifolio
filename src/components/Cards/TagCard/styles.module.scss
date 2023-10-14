@@ -1,0 +1,19 @@
+@import '../../../styles/variables.module.scss';
+
+.container {
+  display: flex;
+
+  width: fit-content;
+
+  padding: 4px 12px;
+
+  background-color: $primary800;
+  border-radius: 16px;
+
+  .title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    color: $primary600;
+  }
+}

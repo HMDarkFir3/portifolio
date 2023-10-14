@@ -1,3 +1,5 @@
+import { TagCard } from '@/components/Cards/TagCard';
+
 import { ExperienceDTO } from '@/dtos/ExperienceDTO';
 
 import styles from './styles.module.scss';
@@ -8,7 +10,7 @@ interface Props {
 }
 
 export function ExperienceCard(props: Props) {
-  const { title, description, company, period } = props.data;
+  const { title, description, company, period, tags } = props.data;
   const { contentStyle } = props;
 
   return (
@@ -26,7 +28,15 @@ export function ExperienceCard(props: Props) {
           </div>
 
           <span className={styles.subtitle}>{title}</span>
+
           {description && <p className={styles.description}>{description}</p>}
+          {tags && (
+            <div className={styles.tagsWrapper}>
+              {tags.map((tag) => (
+                <TagCard key={tag} title={tag} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

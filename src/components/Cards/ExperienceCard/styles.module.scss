@@ -1,4 +1,4 @@
-@import '../../styles/variables.module.scss';
+@import '../../../styles/variables.module.scss';
 
 .container {
   display: flex;
@@ -13,6 +13,8 @@
       height: 20px;
       border-radius: 10px;
       background-color: $primary600;
+
+      z-index: 2;
     }
 
     .line {
@@ -42,29 +44,30 @@
 
       .titleWrapper {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
-      }
-
-      .period {
-        width: fit-content;
-
-        font-size: 0.75rem;
-        font-weight: 700;
-        color: $primary600;
       }
 
       .title {
         font-size: 1.625rem;
         font-weight: 600;
-        line-height: 24px;
+        line-height: 1.5rem;
         color: $text100;
       }
 
+      .period {
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: $primary600;
+      }
+
       .subtitle {
+        margin-bottom: 12px;
+
         font-size: 1.25rem;
         font-weight: 500;
-        color: $text600;
+        line-height: 0.75rem;
+        color: $text400;
       }
 
       .description {
@@ -72,6 +75,16 @@
 
         font-size: 1rem;
         color: $text600;
+      }
+
+      .tagsWrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        width: 70%;
+
+        margin-top: 12px;
       }
     }
   }
@@ -88,11 +101,19 @@
           font-size: 1.25rem;
         }
 
+        .period {
+          font-size: 0.625rem;
+        }
+
         .subtitle {
           font-size: 1.25rem;
         }
 
         .description {
+          width: 100%;
+        }
+
+        .tagsWrapper {
           width: 100%;
         }
       }
