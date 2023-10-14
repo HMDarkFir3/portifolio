@@ -2,12 +2,9 @@
 
 .container {
   display: flex;
-  flex-direction: row;
 
   .dotWrapper {
     display: flex;
-
-    width: fit-content;
 
     position: relative;
 
@@ -19,11 +16,11 @@
     }
 
     .line {
-      width: 1px;
-      height: 100%;
-
       position: absolute;
       left: 50%;
+
+      width: 1px;
+      height: 100%;
 
       background-color: $primary600;
     }
@@ -32,12 +29,16 @@
   .content {
     display: flex;
 
+    width: 100%;
+
     padding: 0 20px 0 84px;
 
     .wrapper {
       display: flex;
       flex-direction: column;
       gap: 10px;
+
+      width: 100%;
 
       .titleWrapper {
         display: flex;

@@ -1,9 +1,10 @@
 import { useState } from 'react';
 
-import { ExperienceCard } from '@/components/ExperienceCard';
 import { InlineButton } from '@/components/Buttons/InlineButton';
+import { ExperienceCard } from '@/components/ExperienceCard';
 
 import { experiences } from '@/utils/experiences';
+import { educations } from '@/utils/educations';
 
 import styles from './styles.module.scss';
 
@@ -29,7 +30,9 @@ export function Experience(props: Props) {
         >
           Experience
         </InlineButton>
+
         <div className={styles.bar} />
+
         <InlineButton
           onClick={() => onToggleExperience('Education')}
           isActive={isActive === 'Education'}
@@ -45,6 +48,20 @@ export function Experience(props: Props) {
               key={experience.id}
               data={experience}
               {...(index !== experiences.length - 1 && {
+                contentStyle: { marginBottom: 80 },
+              })}
+            />
+          ))}
+        </div>
+      )}
+
+      {isActive === 'Education' && (
+        <div>
+          {educations.map((education, index) => (
+            <ExperienceCard
+              key={education.id}
+              data={education}
+              {...(index !== educations.length - 1 && {
                 contentStyle: { marginBottom: 80 },
               })}
             />

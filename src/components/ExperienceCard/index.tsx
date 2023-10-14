@@ -1,9 +1,9 @@
-import { experiences } from '@/utils/experiences';
+import { ExperienceDTO } from '@/dtos/ExperienceDTO';
 
 import styles from './styles.module.scss';
 
 interface Props {
-  data: (typeof experiences)[0];
+  data: ExperienceDTO;
   contentStyle?: React.CSSProperties;
 }
 
@@ -21,12 +21,12 @@ export function ExperienceCard(props: Props) {
       <div className={styles.content} style={contentStyle}>
         <div className={styles.wrapper}>
           <div className={styles.titleWrapper}>
-            <h4 className={styles.title}>{company}</h4>
+            <p className={styles.title}>{company}</p>
             <span className={styles.period}>{period}</span>
           </div>
 
           <span className={styles.subtitle}>{title}</span>
-          <p className={styles.description}>{description}</p>
+          {description && <p className={styles.description}>{description}</p>}
         </div>
       </div>
     </div>
