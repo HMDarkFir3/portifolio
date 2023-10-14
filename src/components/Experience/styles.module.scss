@@ -1,6 +1,14 @@
 @import '../../styles/variables.module.scss';
 
 .container {
-  margin-top: 40px;
-  padding-left: 124px;
+  display: flex;
+  flex-direction: column;
+
+  padding: 88px 0 88px 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 20px 88px 20px;
+  }
 }
