@@ -5,6 +5,22 @@
   flex-direction: column;
 
   padding: 88px 0 88px 20px;
+
+  .typeWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 40px;
+
+    .bar {
+      width: 1px;
+      height: 32px;
+      background-color: $text600;
+      margin: 0 20px;
+    }
+  }
 }
 
 @media (max-width: 768px) {

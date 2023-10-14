@@ -6,7 +6,6 @@
 
   .dotWrapper {
     display: flex;
-    align-items: start;
 
     width: fit-content;
 
@@ -32,9 +31,8 @@
 
   .content {
     display: flex;
-    width: 80%;
 
-    padding-left: 84px;
+    padding: 0 20px 0 84px;
 
     .wrapper {
       display: flex;
@@ -90,7 +88,7 @@
         }
 
         .subtitle {
-          font-size: 1rem;
+          font-size: 1.25rem;
         }
 
         .description {
