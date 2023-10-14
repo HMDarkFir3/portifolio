@@ -6,7 +6,7 @@ export const links = [
   },
   {
     id: '2',
-    label: 'Experience',
+    label: 'Experience & Education',
     slug: 'experience',
   },
   {
