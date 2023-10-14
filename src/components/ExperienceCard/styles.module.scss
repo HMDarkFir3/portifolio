@@ -1,0 +1,102 @@
+@import '../../styles/variables.module.scss';
+
+.container {
+  display: flex;
+  flex-direction: row;
+
+  .dotWrapper {
+    display: flex;
+    align-items: start;
+
+    width: fit-content;
+
+    position: relative;
+
+    .dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      background-color: $primary600;
+    }
+
+    .line {
+      width: 1px;
+      height: 100%;
+
+      position: absolute;
+      left: 50%;
+
+      background-color: $primary600;
+    }
+  }
+
+  .content {
+    display: flex;
+    width: 80%;
+
+    padding-left: 84px;
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .titleWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .period {
+        width: fit-content;
+
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: $primary600;
+      }
+
+      .title {
+        font-size: 1.625rem;
+        font-weight: 600;
+        line-height: 24px;
+        color: $text100;
+      }
+
+      .subtitle {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: $text600;
+      }
+
+      .description {
+        width: 70%;
+
+        font-size: 1rem;
+        color: $text600;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    .content {
+      width: 100%;
+
+      padding-left: 20px;
+      .wrapper {
+        .title {
+          font-size: 1.25rem;
+        }
+
+        .subtitle {
+          font-size: 1rem;
+        }
+
+        .description {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

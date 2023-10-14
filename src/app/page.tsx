@@ -19,8 +19,7 @@ export default function Page() {
       <Header isScrolled={isScrolled} />
       <main className={styles.main}>
         <About id="about" />
-        <About id="experience" />
-        {/* <Experience id="experience" /> */}
+        <Experience id="experience" />
       </main>
       <Footer />
     </div>
