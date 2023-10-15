@@ -3,8 +3,7 @@ export const experiences = [
     id: '1',
     title: 'Implementation Analyst',
     company: 'CAF',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia provident voluptas impedit, error consequuntur similique nihil quaerat architecto dolore fuga accusamus laudantium repudiandae quisquam eius vitae, accusantium minus, quis aspernatur.',
+    description: `At CAF, a company specialized in fraud prevention, I work as an Implementation Analyst. My responsibilities include assisting clients in implementing the company's products. I helped develop a React Native library to streamline client integration and created implementation examples. My contribution has been instrumental in the company's success and customer satisfaction, reinforcing our value in the fraud prevention market.`,
     period: 'AGO 2023 - PRESENT',
     tags: [
       'Android',
@@ -23,8 +22,7 @@ export const experiences = [
     id: '2',
     title: 'Front-End Developer',
     company: 'Grão de Gente',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia provident voluptas impedit, error consequuntur similique nihil quaerat architecto dolore fuga accusamus laudantium repudiandae quisquam eius vitae, accusantium minus, quis aspernatur.',
+    description: `At Grao de Gente, a leading company in e-commerce for baby products, I was responsible for creating the company's mobile application and also contributed to the development of the website, significantly enhancing the company's digital presence and customer experience.`,
     period: 'OUT 2022 - FEV 2023',
     tags: [
       'React',
@@ -35,16 +33,15 @@ export const experiences = [
       'Styled Components',
       'Tailwind',
       'Firebase',
-      'Angolia',
+      'Algolia',
       'AWS',
     ],
   },
   {
     id: '3',
-    title: 'Front-End Developer',
+    title: 'Mobile Developer',
     company: 'GBM Tech & Control',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia provident voluptas impedit, error consequuntur similique nihil quaerat architecto dolore fuga accusamus laudantium repudiandae quisquam eius vitae, accusantium minus, quis aspernatur.',
+    description: `At GBM Tech & Control, I began as a development intern, where I improved the ToT monitoring system and managed the PostgreSQL database. My dedication and performance led to my permanent position in the company. During this transition, I led the refactoring of the ToT Mobile application, which monitors details of wagons, trucks, and ships at the Port of Santos. My efforts contributed to significant improvements in the monitoring systems and operational efficiency.`,
     period: 'MAI 2022 - OUT 2022',
     tags: [
       'React',
@@ -59,8 +56,7 @@ export const experiences = [
     id: '4',
     title: 'Software Development Intern',
     company: 'GBM Tech & Control',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia provident voluptas impedit, error consequuntur similique nihil quaerat architecto dolore fuga accusamus laudantium repudiandae quisquam eius vitae, accusantium minus, quis aspernatur.',
+    description: `At the logistics company GBM Tech & Control, I was responsible for enhancing the ToT monitoring website and managing the PostgreSQL database. I collaborated on implementing new features to improve the site's efficiency and usability. This experience allowed me to acquire development skills and deepen my knowledge of port logistics.`,
     period: 'NOV 2021 - MAI 2022',
     tags: ['React', 'Angular', 'TypeScript', 'JavaScript', 'PostgreSQL'],
   },
