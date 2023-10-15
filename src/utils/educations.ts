@@ -10,7 +10,7 @@ export const educations = [
       'C++',
       'Java',
       'Design Patterns',
-      'POO',
+      'OOP',
       'UML',
       'SQL',
       'DevOps',
@@ -32,7 +32,8 @@ export const educations = [
       'PHP',
       'Ionic',
       'Bootstrap',
-      'MySQL',
+      'SQL',
+      'Database',
     ],
   },
 ];
