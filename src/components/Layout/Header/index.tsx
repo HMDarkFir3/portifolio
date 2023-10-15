@@ -1,6 +1,6 @@
 import { useNavbar } from '@/hooks/useNavbar';
 
-import { Navbar } from '@/components/Navbar';
+import { Navbar } from '@/components/Layout/Navbar';
 import { Overlay } from '@/components/Overlay';
 
 import styles from './styles.module.scss';

@@ -58,6 +58,6 @@ export const experiences = [
     company: 'GBM Tech & Control',
     description: `At the logistics company GBM Tech & Control, I was responsible for enhancing the ToT monitoring website and managing the PostgreSQL database. I collaborated on implementing new features to improve the site's efficiency and usability. This experience allowed me to acquire development skills and deepen my knowledge of port logistics.`,
     period: 'NOV 2021 - MAI 2022',
-    tags: ['React', 'Angular', 'TypeScript', 'JavaScript', 'PostgreSQL'],
+    tags: ['Angular', 'TypeScript', 'JavaScript', 'PostgreSQL'],
   },
 ];

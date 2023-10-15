@@ -2,10 +2,10 @@
 
 import { useWindowScroll } from '@/hooks/useWindowScroll';
 
-import { Header } from '@/components/Header';
-import { About } from '@/components/About';
-import { Experience } from '@/components/Experience';
-import { Footer } from '@/components/Footer';
+import { Header } from '@/components/Layout/Header';
+import { About } from '@/components/Sections/About';
+import { Experience } from '@/components/Sections/Experience';
+import { Footer } from '@/components/Layout/Footer';
 
 import { HEADER_HEIGHT } from '@/utils/constants';
 
