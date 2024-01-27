@@ -32,8 +32,6 @@ export const experiences = [
       'JavaScript',
       'Styled Components',
       'Tailwind',
-      'Firebase',
-      'Algolia',
       'AWS',
     ],
   },

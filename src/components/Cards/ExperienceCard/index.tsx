@@ -10,7 +10,7 @@ interface Props {
 }
 
 export function ExperienceCard(props: Props) {
-  const { title, description, company, period, tags } = props.data;
+  const { title, description, company, university, period, tags } = props.data;
   const { contentStyle } = props;
 
   return (
@@ -23,7 +23,10 @@ export function ExperienceCard(props: Props) {
       <div className={styles.content} style={contentStyle}>
         <div className={styles.wrapper}>
           <div className={styles.titleWrapper}>
-            <p className={styles.title}>{company}</p>
+            <p className={styles.title}>
+              {company}
+              {university}
+            </p>
             <span className={styles.period}>{period}</span>
           </div>
 

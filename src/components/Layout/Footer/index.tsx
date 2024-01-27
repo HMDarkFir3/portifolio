@@ -1,6 +1,6 @@
-import { Linkedin, GitHub, Instagram } from 'react-feather';
-
 import { SocialButton } from '@/components/Buttons/SocialButton';
+
+import { socialMedia } from '@/utils/socialMedia';
 
 import styles from './styles.module.scss';
 
@@ -10,17 +10,14 @@ export function Footer() {
       <span className={styles.name}>Henrique Marques</span>
 
       <div className={styles.social}>
-        <SocialButton
-          href="https://www.linkedin.com/in/hlom/"
-          icon={Linkedin}
-        />
-
-        <SocialButton href="https://github.com/HMDarkFir3" icon={GitHub} />
-
-        <SocialButton
-          href="https://www.instagram.com/hrq_marques/"
-          icon={Instagram}
-        />
+        {socialMedia.map((social) => (
+          <SocialButton
+            key={social.id}
+            name={social.name}
+            href={social.href}
+            icon={social.icon}
+          />
+        ))}
       </div>
 
       <span className={styles.copyright}>&copy; 2023 all rights reserved</span>

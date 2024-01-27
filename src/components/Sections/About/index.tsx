@@ -1,8 +1,8 @@
-import { Linkedin, GitHub, Instagram } from 'react-feather';
-
 import { SocialButton } from '@/components/Buttons/SocialButton';
 import { Button } from '@/components/Buttons/Button';
 import { ScrollDownButton } from '@/components/Buttons/ScrollDownButton';
+
+import { socialMedia } from '@/utils/socialMedia';
 
 import { robotoMono } from '@/styles/fonts';
 
@@ -17,17 +17,14 @@ export function About(props: Props) {
     <section className={styles.container} {...rest}>
       <div className={styles.wrapper}>
         <div className={styles.iconWrapper}>
-          <SocialButton
-            href="https://www.linkedin.com/in/hlom/"
-            icon={Linkedin}
-          />
-
-          <SocialButton href="https://github.com/HMDarkFir3" icon={GitHub} />
-
-          <SocialButton
-            href="https://www.instagram.com/hrq_marques/"
-            icon={Instagram}
-          />
+          {socialMedia.map((social) => (
+            <SocialButton
+              key={social.id}
+              name={social.name}
+              href={social.href}
+              icon={social.icon}
+            />
+          ))}
         </div>
 
         <div className={styles.content}>

@@ -10,14 +10,14 @@ import styles from './styles.module.scss';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {}
 
+type ExperienceType = 'Experience' | 'Education';
+
 export function Experience(props: Props) {
   const { ...rest } = props;
 
-  const [isActive, setIsActive] = useState<'Experience' | 'Education'>(
-    'Experience'
-  );
+  const [isActive, setIsActive] = useState<ExperienceType>('Experience');
 
-  function onToggleExperience(type: 'Experience' | 'Education') {
+  function onToggleExperience(type: ExperienceType) {
     setIsActive(type);
   }
 
