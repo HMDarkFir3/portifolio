@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import { NavbarProvider } from '@/contexts/NavbarContext';
 
 import { nunitoSans } from '@/styles/fonts';
-
 import '@/styles/global.scss';
 
 export const metadata: Metadata = {
@@ -19,7 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={nunitoSans.className}>
-        <NavbarProvider>{children}</NavbarProvider>
+        <NavbarProvider>
+          {children}
+          <Analytics />
+          <SpeedInsights />
+        </NavbarProvider>
       </body>
     </html>
   );

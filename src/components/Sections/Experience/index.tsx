@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 import { InlineButton } from '@/components/Buttons/InlineButton';
 import { ExperienceCard } from '@/components/Cards/ExperienceCard';
@@ -17,9 +17,10 @@ export function Experience(props: Props) {
 
   const [isActive, setIsActive] = useState<ExperienceType>('Experience');
 
-  function onToggleExperience(type: ExperienceType) {
-    setIsActive(type);
-  }
+  const onToggleExperience = useCallback(
+    (type: ExperienceType) => setIsActive(type),
+    [setIsActive],
+  );
 
   return (
     <section className={styles.container} {...rest}>

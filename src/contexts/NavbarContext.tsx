@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useState } from 'react';
+import { createContext, useState, useCallback } from 'react';
 
 interface NavbarContextData {
   isOpenMenu: boolean;
@@ -12,7 +12,10 @@ export const NavbarContext = createContext({} as NavbarContextData);
 export function NavbarProvider({ children }: { children: React.ReactNode }) {
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
 
-  const onToggleMenu = () => setIsOpenMenu((prevState) => !prevState);
+  const onToggleMenu = useCallback(
+    () => setIsOpenMenu((prevState) => !prevState),
+    [setIsOpenMenu],
+  );
 
   return (
     <NavbarContext.Provider value={{ isOpenMenu, onToggleMenu }}>
