@@ -16,6 +16,8 @@
     "@types/react-dom": "18.2.7",
     "@vercel/analytics": "^1.1.3",
     "@vercel/speed-insights": "^1.0.9",
+    "embla-carousel": "^8.1.7",
+    "embla-carousel-react": "^8.1.7",
     "next": "^14.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -43,5 +45,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^3.2.3",
     "sass": "^1.69.2"
-  }
+  },
+  "packageManager": "yarn@3.6.1"
 }

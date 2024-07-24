@@ -1,0 +1,25 @@
+@import '../../../styles/variables.module.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  padding-top: 88px;
+  margin-bottom: 88px;
+
+  .heading {
+    margin-bottom: 40px;
+
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $primary600;
+  }
+}
+
+@media (max-width: 1080px) {
+  .container {
+    padding-top: 88px;
+    padding: 88px 20px 0 20px;
+  }
+}

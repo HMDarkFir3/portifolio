@@ -20,7 +20,7 @@ export function Footer() {
         ))}
       </div>
 
-      <span className={styles.copyright}>&copy; 2023 all rights reserved</span>
+      <span className={styles.copyright}>&copy; 2024 all rights reserved</span>
     </footer>
   );
 }
