@@ -1,34 +1,28 @@
-import { Link as ScrollLink } from 'react-scroll';
 import { ArrowDown } from 'react-feather';
-
-import { HEADER_HEIGHT } from '@/utils/constants';
 
 import styles from './styles.module.scss';
 
-interface Props {
-  to: string;
-}
+interface Props extends React.HTMLAttributes<HTMLButtonElement> {}
 
 export function ScrollDownButton(props: Props) {
-  const { to } = props;
+  const { ...rest } = props;
 
   return (
-    <button className={styles.container}>
-      <ScrollLink
-        className={styles.scrollLink}
-        to={to}
-        spy={true}
-        smooth={true}
-        offset={-HEADER_HEIGHT}
-        duration={500}
-      >
-        <div className={styles.scroll}>
-          <div className={styles.scrollBar} />
-        </div>
-        <span>Scroll Down</span>
+    <button
+      className={styles.container}
+      onClick={() => {
+        const element = document.getElementById('experience');
 
-        <ArrowDown className={styles.scrollIcon} size={16} />
-      </ScrollLink>
+        element?.scrollIntoView({ behavior: 'smooth' });
+      }}
+      {...rest}
+    >
+      <div className={styles.scroll}>
+        <div className={styles.scrollBar} />
+      </div>
+      <span>Scroll Down</span>
+
+      <ArrowDown className={styles.scrollIcon} size={16} />
     </button>
   );
 }

@@ -1,4 +1,4 @@
-import { useNavbar } from '@/hooks/useNavbar';
+import { useNavbar } from '@/contexts/NavbarContext';
 
 import styles from './styles.module.scss';
 

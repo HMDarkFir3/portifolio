@@ -69,6 +69,7 @@ export function Carousel() {
           <div className="embla-thumbs__container">
             {sliders.map((slide, index) => (
               <div
+                key={slide.id}
                 className={` ${selectedThumbIndex === index ? 'embla-thumbs__slide embla-thumbs__slide--selected' : 'embla-thumbs__slide embla-thumbs__slide--unselected'}`}
               >
                 <button

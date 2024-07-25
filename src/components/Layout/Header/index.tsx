@@ -1,4 +1,4 @@
-import { useNavbar } from '@/hooks/useNavbar';
+import { useNavbar } from '@/contexts/NavbarContext';
 
 import { Navbar } from '@/components/Layout/Navbar';
 import { Overlay } from '@/components/Overlay';

@@ -196,11 +196,39 @@
     flex: 0 0 100%;
   }
 
+  .embla-thumbs__slide {
+    flex: 0 0 24%;
+  }
+}
+
+@media (max-width: 620px) {
+  .embla__slide__number {
+    height: 20rem;
+  }
+
+  .embla__slide {
+    flex: 0 0 100%;
+  }
+
+  .embla-thumbs__slide {
+    flex: 0 0 28%;
+  }
+}
+
+@media (max-width: 548px) {
+  .embla__slide__number {
+    height: 18rem;
+  }
+
+  .embla__slide {
+    flex: 0 0 100%;
+  }
+
   .embla-thumbs__slide__number {
     height: 5.5rem;
   }
 
   .embla-thumbs__slide {
-    flex: 0 0 24%;
+    flex: 0 0 32%;
   }
 }

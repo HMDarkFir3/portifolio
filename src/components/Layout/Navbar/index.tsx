@@ -1,26 +1,25 @@
-import { Link as ScrollLink } from 'react-scroll';
+import { useSmoothScroll } from '@/hooks/useSmoothScroll';
 
-import { useNavbar } from '@/hooks/useNavbar';
+import { useNavbar } from '@/contexts/NavbarContext';
 
 import { links } from '@/utils/links';
+import { HEADER_HEIGHT } from '@/utils/constants';
 
 import { robotoMono } from '@/styles/fonts';
 
 import styles from './styles.module.scss';
 
 export function Navbar() {
+  const { onScrollTo } = useSmoothScroll();
   const { onToggleMenu } = useNavbar();
 
   return (
     <nav className={`${styles.container} ${styles.isMobile}`}>
       <ul className={styles.list}>
         {links.map((link) => (
-          <ScrollLink
+          <button
             key={link.id}
-            to={link.slug}
-            smooth={true}
-            offset={-88}
-            duration={500}
+            onClick={() => onScrollTo(link.slug, HEADER_HEIGHT)}
           >
             <li className={styles.item} onClick={onToggleMenu}>
               <div className={styles.itemWrapper}>
@@ -34,7 +33,7 @@ export function Navbar() {
 
               <div className={styles.bar} />
             </li>
-          </ScrollLink>
+          </button>
         ))}
       </ul>
     </nav>

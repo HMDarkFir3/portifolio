@@ -7,7 +7,7 @@ interface OptionsProps {
   scale: number;
 }
 
-export const useCarousel = (options: OptionsProps) => {
+export function useCarousel(options: OptionsProps) {
   const [emblaMainRef, emblaMainApi] = useEmblaCarousel();
   const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
     containScroll: 'keepSnaps',
@@ -25,6 +25,12 @@ export const useCarousel = (options: OptionsProps) => {
     opacity: options.opacity,
     scale: options.scale,
   });
+
+  const numberWithinRange = useCallback(
+    (number: number, min: number, max: number): number =>
+      Math.min(Math.max(number, min), max),
+    [],
+  );
 
   const onButtonClick = useCallback(
     (direction: 'prev' | 'next') => {
@@ -134,13 +140,7 @@ export const useCarousel = (options: OptionsProps) => {
           });
         });
     },
-    [],
-  );
-
-  const numberWithinRange = useCallback(
-    (number: number, min: number, max: number): number =>
-      Math.min(Math.max(number, min), max),
-    [],
+    [numberWithinRange],
   );
 
   useEffect(() => {
@@ -183,4 +183,4 @@ export const useCarousel = (options: OptionsProps) => {
     onDotButtonClick,
     onThumbClick,
   };
-};
+}

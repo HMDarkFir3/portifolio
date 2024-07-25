@@ -1,7 +1,10 @@
+import { useSmoothScroll } from '@/hooks/useSmoothScroll';
+
 import { SocialButton } from '@/components/Buttons/SocialButton';
 import { Button } from '@/components/Buttons/Button';
 import { ScrollDownButton } from '@/components/Buttons/ScrollDownButton';
 
+import { HEADER_HEIGHT } from '@/utils/constants';
 import { socialMedia } from '@/utils/socialMedia';
 
 import { robotoMono } from '@/styles/fonts';
@@ -12,6 +15,8 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function About(props: Props) {
   const { ...rest } = props;
+
+  const { onScrollTo } = useSmoothScroll();
 
   return (
     <section className={styles.container} {...rest}>
@@ -49,7 +54,9 @@ export function About(props: Props) {
         </div>
       </div>
 
-      <ScrollDownButton to="experience" />
+      <ScrollDownButton
+        onClick={() => onScrollTo('experience', HEADER_HEIGHT)}
+      />
     </section>
   );
 }
