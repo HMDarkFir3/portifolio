@@ -1,0 +1,5 @@
+echo "Run Linting"
+yarn next lint
+
+echo "Run Commit Linting"
+yarn commitlint --edit
